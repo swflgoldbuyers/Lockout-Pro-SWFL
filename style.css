@@ -1301,3 +1301,110 @@ width:94%;
 }
 
 }
+/* =======================================
+   FLOATING CALL BUTTON
+======================================= */
+
+.floating-call{
+
+position:fixed;
+
+right:25px;
+
+bottom:25px;
+
+background:#FF7A00;
+
+color:#fff;
+
+padding:16px 24px;
+
+border-radius:18px;
+
+font-weight:700;
+
+font-size:1rem;
+
+line-height:1.35;
+
+text-align:center;
+
+box-shadow:0 12px 30px rgba(255,122,0,.45);
+
+z-index:9999;
+
+transition:.3s;
+
+animation:pulse 2.2s infinite;
+
+}
+
+.floating-call span{
+
+display:block;
+
+margin-top:4px;
+
+font-size:1.15rem;
+
+font-weight:800;
+
+letter-spacing:.5px;
+
+}
+
+.floating-call:hover{
+
+transform:translateY(-4px);
+
+background:#E36600;
+
+}
+
+@keyframes pulse{
+
+0%{
+
+box-shadow:0 0 0 0 rgba(255,122,0,.45);
+
+}
+
+70%{
+
+box-shadow:0 0 0 18px rgba(255,122,0,0);
+
+}
+
+100%{
+
+box-shadow:0 0 0 0 rgba(255,122,0,0);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.floating-call{
+
+left:15px;
+
+right:15px;
+
+bottom:18px;
+
+padding:18px;
+
+font-size:1.05rem;
+
+border-radius:16px;
+
+}
+
+.floating-call span{
+
+font-size:1.2rem;
+
+}
+
+}
