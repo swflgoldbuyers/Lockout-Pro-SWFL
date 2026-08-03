@@ -1408,3 +1408,104 @@ font-size:1.2rem;
 }
 
 }
+/* =======================================
+   EMERGENCY CALL BANNER
+======================================= */
+
+.emergency-banner{
+
+background:linear-gradient(135deg,#0057D9,#0A6CFF);
+
+padding:28px 0;
+
+}
+
+.emergency-content{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:30px;
+
+}
+
+.emergency-content h2{
+
+color:#fff;
+
+font-size:2rem;
+
+margin-bottom:8px;
+
+}
+
+.emergency-content p{
+
+color:rgba(255,255,255,.9);
+
+margin:0;
+
+font-size:1.05rem;
+
+}
+
+.emergency-btn{
+
+display:inline-block;
+
+background:#fff;
+
+color:#0A6CFF;
+
+padding:16px 28px;
+
+border-radius:12px;
+
+font-weight:700;
+
+font-size:1.1rem;
+
+text-decoration:none;
+
+transition:.3s;
+
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+}
+
+.emergency-btn:hover{
+
+transform:translateY(-3px);
+
+background:#f4f4f4;
+
+}
+
+@media(max-width:768px){
+
+.emergency-content{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.emergency-content h2{
+
+font-size:1.7rem;
+
+}
+
+.emergency-btn{
+
+width:100%;
+
+text-align:center;
+
+}
+
+}
