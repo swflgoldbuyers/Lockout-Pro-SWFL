@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://swflgoldbuyers.github.io/Lockout-Pro-SWFL/sitemap.xml
+Sitemap: https://lockoutproswfl.com/sitemap.xml
