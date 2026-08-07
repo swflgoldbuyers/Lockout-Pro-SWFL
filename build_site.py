@@ -806,8 +806,9 @@ def build_service_pages():
         schemas=[org_schema(), crumb_schema],
     )}
 <body class="inner-page">
+<a class="skip-link" href="#main">Skip to content</a>
 {header("services")}
-<section class="page-hero page-hero-services">
+<section class="page-hero page-hero-services" id="main">
   <div class="page-hero-media" style="background-image:url('/assets/images/hero-car.jpg')"></div>
   <div class="page-hero-veil"></div>
   <div class="container page-hero-content">
@@ -875,8 +876,9 @@ def build_service_pages():
             schemas=[service_schema, crumb_schema, faq_schema(s["faqs"])],
         )}
 <body class="inner-page">
+<a class="skip-link" href="#main">Skip to content</a>
 {header("services")}
-<section class="page-hero">
+<section class="page-hero" id="main">
   <div class="page-hero-media" style="background-image:url('{s["image"]}')"></div>
   <div class="page-hero-veil"></div>
   <div class="container page-hero-content">
@@ -944,8 +946,9 @@ def build_location_pages():
         schemas=[org_schema(), crumb_schema],
     )}
 <body class="inner-page">
+<a class="skip-link" href="#main">Skip to content</a>
 {header("locations")}
-<section class="page-hero page-hero-areas">
+<section class="page-hero page-hero-areas" id="main">
   <div class="page-hero-media" style="background-image:url('/assets/images/driving.jpg')"></div>
   <div class="page-hero-veil"></div>
   <div class="container page-hero-content">
@@ -1014,8 +1017,9 @@ def build_location_pages():
             schemas=[local_schema, crumb_schema, faq_schema(faqs)],
         )}
 <body class="inner-page">
+<a class="skip-link" href="#main">Skip to content</a>
 {header("locations")}
-<section class="page-hero">
+<section class="page-hero" id="main">
   <div class="page-hero-media" style="background-image:url('/assets/images/luxury-car.jpg')"></div>
   <div class="page-hero-veil"></div>
   <div class="container page-hero-content">
@@ -1119,8 +1123,9 @@ def build_resource_pages():
         schemas=[item_list, crumb_schema],
     )}
 <body class="inner-page">
+<a class="skip-link" href="#main">Skip to content</a>
 {header("resources")}
-<section class="page-hero">
+<section class="page-hero" id="main">
   <div class="page-hero-media" style="background-image:url('/assets/images/key-fob.jpg')"></div>
   <div class="page-hero-veil"></div>
   <div class="container page-hero-content">
@@ -1176,8 +1181,9 @@ def build_resource_pages():
             article=True,
         )}
 <body class="inner-page">
+<a class="skip-link" href="#main">Skip to content</a>
 {header("resources")}
-<section class="page-hero article-hero">
+<section class="page-hero article-hero" id="main">
   <div class="page-hero-media" style="background-image:url('{r["image"]}')"></div>
   <div class="page-hero-veil"></div>
   <div class="container page-hero-content">
