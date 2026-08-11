@@ -756,7 +756,7 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
 }
 .local-band-map .local-band-veil {
   background:
-    linear-gradient(105deg, rgba(4, 13, 26, 0.72) 0%, rgba(4, 13, 26, 0.55) 50%, rgba(4, 13, 26, 0.7) 100%);
+    linear-gradient(105deg, rgba(4, 13, 26, 0.62) 0%, rgba(4, 13, 26, 0.48) 50%, rgba(4, 13, 26, 0.6) 100%);
 }
 .local-band-content {
   position: relative;
@@ -1180,8 +1180,17 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
   to { opacity: 1; transform: none; }
 }
 
-@media (max-width: 1000px) {
-  .review-card { flex: 0 0 calc((100% - 0.55rem) / 2); }
+@media (max-width: 980px) {
+  .help-grid { grid-template-columns: 1fr; }
+  .help-services { grid-template-columns: 1fr 1fr; }
+  .steps-rail {
+    flex-direction: row;
+  }
+  .steps-rail li { flex: 1; }
+}
+@media (max-width: 700px) {
+  .help-services { grid-template-columns: 1fr; }
+  .steps-rail { flex-direction: column; }
 }
   .category-split,
   .help-services { grid-template-columns: 1fr; }
