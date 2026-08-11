@@ -91,19 +91,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lockoutproswfl.com/locations/fort-myers/</loc>
-    <lastmod>2026-08-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lockoutproswfl.com/locations/cape-coral/</loc>
-    <lastmod>2026-08-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lockoutproswfl.com/locations/naples/</loc>
+    <loc>https://lockoutproswfl.com/locations/estero/</loc>
     <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -115,13 +103,19 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lockoutproswfl.com/locations/estero/</loc>
+    <loc>https://lockoutproswfl.com/locations/naples/</loc>
     <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lockoutproswfl.com/locations/north-naples/</loc>
+    <loc>https://lockoutproswfl.com/locations/fort-myers/</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lockoutproswfl.com/locations/san-carlos-park/</loc>
     <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -133,13 +127,19 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lockoutproswfl.com/locations/lehigh-acres/</loc>
+    <loc>https://lockoutproswfl.com/locations/cape-coral/</loc>
     <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lockoutproswfl.com/locations/san-carlos-park/</loc>
+    <loc>https://lockoutproswfl.com/locations/north-naples/</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lockoutproswfl.com/locations/lehigh-acres/</loc>
     <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

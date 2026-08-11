@@ -88,18 +88,21 @@ AREA_DETAILS = {
     },
 }
 
+# Primary display order (homepage / nav lists):
+# Estero, Bonita Springs, Naples, Fort Myers, San Carlos Park, Fort Myers Beach, Cape Coral
 AREAS = [
-    {"slug": "fort-myers", "name": "Fort Myers", "county": "Lee County"},
-    {"slug": "cape-coral", "name": "Cape Coral", "county": "Lee County"},
-    {"slug": "naples", "name": "Naples", "county": "Collier County"},
-    {"slug": "bonita-springs", "name": "Bonita Springs", "county": "Lee County"},
-    {"slug": "estero", "name": "Estero", "county": "Lee County"},
+    {"slug": "estero", "name": "Estero", "county": "Lee County", "primary": True},
+    {"slug": "bonita-springs", "name": "Bonita Springs", "county": "Lee County", "primary": True},
+    {"slug": "naples", "name": "Naples", "county": "Collier County", "primary": True},
+    {"slug": "fort-myers", "name": "Fort Myers", "county": "Lee County", "primary": True},
+    {"slug": "san-carlos-park", "name": "San Carlos Park", "county": "Lee County", "primary": True},
+    {"slug": "fort-myers-beach", "name": "Fort Myers Beach", "county": "Lee County", "primary": True},
+    {"slug": "cape-coral", "name": "Cape Coral", "county": "Lee County", "primary": True},
     {"slug": "north-naples", "name": "North Naples", "county": "Collier County"},
-    {"slug": "fort-myers-beach", "name": "Fort Myers Beach", "county": "Lee County"},
     {"slug": "lehigh-acres", "name": "Lehigh Acres", "county": "Lee County"},
-    {"slug": "san-carlos-park", "name": "San Carlos Park", "county": "Lee County"},
     {"slug": "north-fort-myers", "name": "North Fort Myers", "county": "Lee County"},
 ]
+PRIMARY_AREAS = [a for a in AREAS if a.get("primary")]
 
 SERVICES = [
     # Automotive
@@ -249,12 +252,12 @@ SERVICES = [
         "slug": "home-lockouts",
         "category": "residential",
         "name": "Home Lockouts",
-        "short": "Locked out of your house? Fast, professional residential lockout help.",
+        "short": "Locked out of your house or commercial space? Fast, professional unlock help.",
         "eyebrow": "RESIDENTIAL",
-        "h1": "Home Lockout Service in Southwest Florida",
-        "meta_title": "Home Lockouts SWFL | House Unlock Service | Lockout Pro",
-        "meta_desc": "Locked out of your house in Fort Myers, Cape Coral, Naples or SWFL? Lockout Pro provides home lockout service. Call (239) 380-5240.",
-        "intro": "Locked out of your house after a long day? Lockout Pro SWFL provides professional home lockout help across Southwest Florida — so you can get back inside without the stress spiral.",
+        "h1": "Home & Commercial Lockout Service in Southwest Florida",
+        "meta_title": "Home & Commercial Lockouts SWFL | Unlock Service | Lockout Pro",
+        "meta_desc": "Locked out of your house or commercial space in Estero, Bonita Springs, Naples, Fort Myers or SWFL? Lockout Pro provides lockout service. Call (239) 380-5240.",
+        "intro": "Locked out of your house, apartment, or commercial space? Lockout Pro SWFL provides professional residential and commercial lockout help across Southwest Florida — so you can get back inside without the stress spiral.",
         "body": [
             ("Back Inside Your Home", "Call with your address and a quick description of the door or lock situation. We'll come to you."),
             ("Houses Across SWFL", "From Fort Myers to Naples and nearby communities, we help homeowners who've been locked out."),
@@ -267,7 +270,7 @@ SERVICES = [
             ("Are you available at night?", "Yes. Emergency residential lockout help is available 24/7."),
         ],
         "related": ["apartment-lockouts", "condo-lockouts", "garage-lockouts", "emergency-residential-lockout"],
-        "image": "/assets/images/home-premium.webp",
+        "image": "/assets/images/resi.webp",
     },
     {
         "slug": "apartment-lockouts",
@@ -674,7 +677,7 @@ def header(active: str = "") -> str:
 def footer() -> str:
     auto_links = "\n".join(f'<li><a href="/services/{s["slug"]}/">{esc(s["name"])}</a></li>' for s in AUTO_SERVICES[:4])
     home_links = "\n".join(f'<li><a href="/services/{s["slug"]}/">{esc(s["name"])}</a></li>' for s in HOME_SERVICES[:4])
-    area_links = "\n".join(f'<li><a href="/locations/{a["slug"]}/">{esc(a["name"])}</a></li>' for a in AREAS[:4])
+    area_links = "\n".join(f'<li><a href="/locations/{a["slug"]}/">{esc(a["name"])}</a></li>' for a in PRIMARY_AREAS[:4])
     return f'''<footer class="site-footer" id="contact">
   <div class="container footer-grid">
     <div class="footer-brand">
@@ -916,7 +919,7 @@ def build_service_pages():
             for slug in s["related"] if slug in SERVICE_BY_SLUG
         )
         body = "".join(f'<section class="content-block"><h2>{esc(h)}</h2><p>{esc(p)}</p></section>' for h, p in s["body"])
-        areas = ", ".join(f'<a href="/locations/{a["slug"]}/">{esc(a["name"])}</a>' for a in AREAS[:4])
+        areas = ", ".join(f'<a href="/locations/{a["slug"]}/">{esc(a["name"])}</a>' for a in PRIMARY_AREAS[:4])
         crumb_nav, crumb_schema = breadcrumbs([("Home", "/"), ("Services", "/services/"), (s["name"], None)])
         service_schema = {
             "@context": "https://schema.org", "@type": "Service",

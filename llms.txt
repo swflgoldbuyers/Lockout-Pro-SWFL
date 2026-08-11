@@ -26,15 +26,15 @@ Services:
 - Emergency Residential Lockouts: https://lockoutproswfl.com/services/emergency-residential-lockout/
 
 City Pages:
-- Fort Myers: https://lockoutproswfl.com/locations/fort-myers/
-- Cape Coral: https://lockoutproswfl.com/locations/cape-coral/
-- Naples: https://lockoutproswfl.com/locations/naples/
-- Bonita Springs: https://lockoutproswfl.com/locations/bonita-springs/
 - Estero: https://lockoutproswfl.com/locations/estero/
-- North Naples: https://lockoutproswfl.com/locations/north-naples/
-- Fort Myers Beach: https://lockoutproswfl.com/locations/fort-myers-beach/
-- Lehigh Acres: https://lockoutproswfl.com/locations/lehigh-acres/
+- Bonita Springs: https://lockoutproswfl.com/locations/bonita-springs/
+- Naples: https://lockoutproswfl.com/locations/naples/
+- Fort Myers: https://lockoutproswfl.com/locations/fort-myers/
 - San Carlos Park: https://lockoutproswfl.com/locations/san-carlos-park/
+- Fort Myers Beach: https://lockoutproswfl.com/locations/fort-myers-beach/
+- Cape Coral: https://lockoutproswfl.com/locations/cape-coral/
+- North Naples: https://lockoutproswfl.com/locations/north-naples/
+- Lehigh Acres: https://lockoutproswfl.com/locations/lehigh-acres/
 - North Fort Myers: https://lockoutproswfl.com/locations/north-fort-myers/
 
 Resource Center:

@@ -87,7 +87,8 @@
           <span class="review-stars" aria-hidden="true">★★★★★</span>
           ${source}
         </div>
-        <p class="review-text">“${escapeHtml(r.text)}”</p>
+        <p class="review-text is-clamped">“${escapeHtml(r.text)}”</p>
+        <button type="button" class="review-toggle" hidden>Read more</button>
         <div class="review-meta">
           <strong class="review-name">${escapeHtml(r.name)}</strong>
           ${profile}
@@ -97,6 +98,27 @@
       })
       .join("");
 
+    // Enable Read more only when text actually overflows the clamp
+    const setupExpandable = () => {
+      track.querySelectorAll(".review-card").forEach((card) => {
+        const text = card.querySelector(".review-text");
+        const toggle = card.querySelector(".review-toggle");
+        if (!text || !toggle) return;
+        text.classList.add("is-clamped");
+        const overflows = text.scrollHeight > text.clientHeight + 2;
+        toggle.hidden = !overflows;
+        toggle.textContent = "Read more";
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.onclick = () => {
+          const expanded = text.classList.contains("is-clamped");
+          text.classList.toggle("is-clamped", !expanded);
+          toggle.textContent = expanded ? "Read less" : "Read more";
+          toggle.setAttribute("aria-expanded", String(expanded));
+          if (expanded) stopAuto();
+          else startAuto();
+        };
+      });
+    };
     let index = 0;
     const cards = () => Array.from(track.children);
     const pageSize = () => (window.innerWidth < 700 ? 1 : window.innerWidth < 1000 ? 2 : 3);
@@ -169,6 +191,8 @@
     root.addEventListener("focusout", startAuto);
     window.addEventListener("resize", () => go(Math.min(index, maxIndex())));
 
+    setupExpandable();
+    window.addEventListener("resize", setupExpandable);
     renderDots();
     go(0);
     startAuto();
