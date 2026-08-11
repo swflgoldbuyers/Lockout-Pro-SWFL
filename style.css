@@ -1268,6 +1268,8 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
 }
 
 @media (max-width: 700px) {
+  .help-services { grid-template-columns: 1fr; }
+  .steps-rail { flex-direction: column; }
   .footer-grid,
   .area-chip-grid { grid-template-columns: 1fr; }
   .section { padding: 2.25rem 0; }
