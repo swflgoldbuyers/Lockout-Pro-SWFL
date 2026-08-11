@@ -732,9 +732,9 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
   position: absolute;
   inset: 0;
   background:
-    url("/assets/images/map.webp") center 72%/cover no-repeat;
-  opacity: 0.28;
-  filter: grayscale(0.15) contrast(1.05);
+    url("/assets/images/map.webp") center 74%/cover no-repeat;
+  opacity: 0.38;
+  filter: grayscale(0.05) contrast(1.08) saturate(1.05);
   pointer-events: none;
 }
 .local-band-media {
