@@ -14,18 +14,18 @@
 <meta property="og:title" content="Lockout Pro SWFL | Locked Out? We're On The Way.">
 <meta property="og:description" content="Fast vehicle and home lockout help across Southwest Florida. Call (239) 380-5240.">
 <meta property="og:url" content="https://lockoutproswfl.com/">
-<meta property="og:image" content="https://lockoutproswfl.com/assets/images/hero-desktop.webp">
+<meta property="og:image" content="https://lockoutproswfl.com/assets/images/hero.webp">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Lockout Pro SWFL">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Lockout Pro SWFL | Vehicle & Home Lockouts">
 <meta name="twitter:description" content="Locked out? Call (239) 380-5240 for help across Southwest Florida.">
-<meta name="twitter:image" content="https://lockoutproswfl.com/assets/images/hero-desktop.webp">
+<meta name="twitter:image" content="https://lockoutproswfl.com/assets/images/hero.webp">
 <link rel="icon" href="/LOGO.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="/assets/images/hero-desktop.webp" type="image/webp">
+<link rel="preload" as="image" href="/assets/images/hero.webp" type="image/webp">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">
 {
@@ -34,12 +34,12 @@
   "name": "Lockout Pro SWFL",
   "url": "https://lockoutproswfl.com/",
   "logo": "https://lockoutproswfl.com/LOGO.png",
-  "image": "https://lockoutproswfl.com/assets/images/hero-desktop.webp",
+  "image": "https://lockoutproswfl.com/assets/images/hero.webp",
   "telephone": "+1-239-380-5240",
   "priceRange": "$$",
   "description": "24/7 lockout help across Southwest Florida for vehicles and homes — cars, trucks, SUVs, houses, apartments, condos, and garages.",
-  "areaServed": ["Fort Myers","Cape Coral","Naples","Bonita Springs","Estero","North Naples","Fort Myers Beach","Lehigh Acres","San Carlos Park","North Fort Myers","Southwest Florida"],
-  "serviceType": ["Car Lockouts","Truck & SUV Lockouts","Trunk Lockouts","Home Lockouts","Apartment Lockouts","Condo Lockouts","Garage Lockouts","Emergency Lockouts"],
+  "areaServed": ["Fort Myers","Cape Coral","Naples","Bonita Springs","Estero","North Naples","Fort Myers Beach","Lehigh Acres","San Carlos Park","North Fort Myers","Lee County","Collier County","Southwest Florida"],
+  "serviceType": ["Car Lockouts","Truck & SUV Lockouts","Trunk Lockouts","Keys Locked in Car","Home Lockouts","Apartment Lockouts","Condo Lockouts","Garage Lockouts","Emergency Lockouts"],
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
     "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
@@ -101,11 +101,20 @@
 <main>
   <section class="home-hero" id="top">
     <picture class="home-hero-media">
-      <source media="(max-width: 700px)" srcset="/assets/images/hero-mobile.webp" type="image/webp">
-      <source srcset="/assets/images/hero-desktop.webp" type="image/webp">
-      <img src="/assets/images/hero-desktop.jpg" alt="" width="1920" height="980" fetchpriority="high" decoding="async">
+      <source media="(max-width: 700px)" srcset="/assets/images/hero-sm.webp" type="image/webp">
+      <source srcset="/assets/images/hero.webp" type="image/webp">
+      <img src="/assets/images/hero.jpg" alt="Vehicle and home lockout scenes across Southwest Florida" width="1789" height="879" fetchpriority="high" decoding="async">
     </picture>
     <div class="home-hero-veil" aria-hidden="true"></div>
+
+    <div class="hero-trust-float">
+      <picture>
+        <source media="(max-width: 700px)" srcset="/assets/images/trust-strip-sm.webp" type="image/webp">
+        <source srcset="/assets/images/trust-strip.webp" type="image/webp">
+        <img src="/assets/images/trust-strip.jpg" alt="Proudly serving Southwest Florida communities including Collier County, Lee County, Naples, Fort Myers, Bonita Springs, and Estero" width="1920" height="740" decoding="async">
+      </picture>
+    </div>
+
     <div class="container home-hero-content">
       <p class="eyebrow">24/7 EMERGENCY LOCKOUT SERVICES</p>
       <h1>Locked Out?<br><em>We're On The Way.</em></h1>
@@ -116,18 +125,26 @@
       </div>
       <p class="hero-local">Fort Myers · Cape Coral · Naples · Bonita Springs · Estero</p>
     </div>
+
+    <div class="hero-reviews" id="reviews" hidden data-reviews-root>
+      <div class="container">
+        <div class="hero-reviews-head">
+          <p class="eyebrow">CUSTOMER REVIEWS</p>
+          <h2>Why Southwest Florida Trusts Us</h2>
+        </div>
+        <div class="reviews-carousel" data-reviews-carousel>
+          <button class="reviews-nav reviews-prev" type="button" aria-label="Previous reviews">‹</button>
+          <div class="reviews-viewport">
+            <div class="reviews-track" data-reviews-track></div>
+          </div>
+          <button class="reviews-nav reviews-next" type="button" aria-label="Next reviews">›</button>
+        </div>
+        <div class="reviews-dots" data-reviews-dots></div>
+      </div>
+    </div>
   </section>
 
-  <div class="trust-bar" aria-label="Service highlights">
-    <div class="container trust-bar-inner">
-      <span>24/7 Available</span>
-      <span>Vehicle Lockouts</span>
-      <span>Home Lockouts</span>
-      <span>Lee &amp; Collier County</span>
-    </div>
-  </div>
-
-  <section class="section" id="services">
+  <section class="section section-tight" id="services">
     <div class="container">
       <div class="section-head compact" data-reveal>
         <p class="eyebrow">HOW WE HELP</p>
@@ -174,17 +191,14 @@
         </ul>
       </div>
       <picture class="why-visual" data-reveal>
-        <source srcset="/assets/images/home-premium.webp" type="image/webp">
-        <img src="/assets/images/home-premium.jpg" alt="Southwest Florida home" width="1400" height="900" loading="lazy" decoding="async">
+        <source srcset="/assets/images/why-lockout-pro.webp" type="image/webp">
+        <img src="/assets/images/why-lockout-pro.jpg" alt="Lockout Pro SWFL serving vehicles and communities across Southwest Florida" width="1600" height="786" loading="lazy" decoding="async">
       </picture>
     </div>
   </section>
 
-  <section class="local-band" id="areas">
-    <picture class="local-band-media">
-      <source srcset="/assets/images/swfl-communities.webp" type="image/webp">
-      <img src="/assets/images/swfl-communities.jpg" alt="Proudly serving communities across Southwest Florida" width="1600" height="900" loading="lazy" decoding="async">
-    </picture>
+  <section class="local-band local-band-map" id="areas">
+    <div class="local-band-map-bg" aria-hidden="true"></div>
     <div class="local-band-veil" aria-hidden="true"></div>
     <div class="container local-band-content" data-reveal>
       <p class="eyebrow">PROUDLY SERVING SOUTHWEST FLORIDA</p>
@@ -213,11 +227,11 @@
       <div class="faq-list" data-reveal>
         <details class="faq-item">
           <summary>Can you help if I'm locked out of my car?</summary>
-          <div class="faq-answer"><p>Yes. We provide vehicle lockout help for cars, trucks, and SUVs across Southwest Florida.</p></div>
+          <div class="faq-answer"><p>Yes. We provide vehicle lockout help for cars, trucks, and SUVs across Southwest Florida. See our <a href="/services/car-lockouts/">car lockout service</a>.</p></div>
         </details>
         <details class="faq-item">
           <summary>Can you unlock my house or apartment?</summary>
-          <div class="faq-answer"><p>Yes. We help with home, apartment, condo, and garage lockouts.</p></div>
+          <div class="faq-answer"><p>Yes. We help with <a href="/services/home-lockouts/">home</a>, <a href="/services/apartment-lockouts/">apartment</a>, condo, and garage lockouts.</p></div>
         </details>
         <details class="faq-item">
           <summary>How quickly can you arrive?</summary>
@@ -225,7 +239,7 @@
         </details>
         <details class="faq-item">
           <summary>What areas do you serve?</summary>
-          <div class="faq-answer"><p>Fort Myers, Cape Coral, Naples, Bonita Springs, Estero, and surrounding Southwest Florida communities.</p></div>
+          <div class="faq-answer"><p>Fort Myers, Cape Coral, Naples, Bonita Springs, Estero, and surrounding Southwest Florida communities. <a href="/locations/">View all areas</a>.</p></div>
         </details>
         <details class="faq-item">
           <summary>Are you available 24/7?</summary>
@@ -257,8 +271,8 @@
       <h3>Vehicle</h3>
       <ul>
         <li><a href="/services/car-lockouts/">Car Lockouts</a></li>
+        <li><a href="/services/keys-locked-in-car/">Keys Locked In Car</a></li>
         <li><a href="/services/truck-suv-lockouts/">Truck &amp; SUV</a></li>
-        <li><a href="/services/trunk-lockouts/">Trunk Lockouts</a></li>
         <li><a href="/services/emergency-vehicle-lockout/">Emergency</a></li>
       </ul>
     </div>
@@ -294,6 +308,7 @@
   <span class="sticky-call-kicker">Locked Out?</span>
   <span class="sticky-call-num">CALL (239) 380-5240</span>
 </a>
+<script src="/reviews-data.js" defer></script>
 <script src="/script.js" defer></script>
 </body>
 </html>

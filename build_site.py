@@ -14,6 +14,80 @@ BRAND = "Lockout Pro SWFL"
 TODAY = date.today().isoformat()
 AGL = "https://agoodlocksmith.com"
 
+
+AREA_DETAILS = {
+    "fort-myers": {
+        "blurb": "Fort Myers is a central hub for Southwest Florida drivers and residents — downtown corridors, residential neighborhoods, medical campuses, and retail lots where lockouts happen every week.",
+        "vehicle": "From downtown parking to Colonial Boulevard errands, Fort Myers car and SUV lockouts are one of our most common calls. If keys are locked inside, call and we will come to you.",
+        "home": "Home, apartment, and condo lockouts happen across Fort Myers neighborhoods day and night. Share your address and we will give a realistic arrival estimate.",
+        "nearby": ["cape-coral", "north-fort-myers", "lehigh-acres", "san-carlos-park"],
+        "links": [("Car Lockouts in Fort Myers", "/services/car-lockouts/"), ("Home Lockouts", "/services/home-lockouts/"), ("Keys Locked In Car", "/services/keys-locked-in-car/")],
+    },
+    "cape-coral": {
+        "blurb": "Cape Coral’s canal communities, shopping centers, and long residential streets mean lockouts can leave you stranded far from a spare key — especially in afternoon heat.",
+        "vehicle": "Cape Coral vehicle lockouts are common after errands, school runs, and waterfront stops. We provide mobile unlock help across the Cape.",
+        "home": "Locked out of a Cape Coral house or apartment? Call with your street address and we will coordinate residential lockout assistance.",
+        "nearby": ["fort-myers", "north-fort-myers", "fort-myers-beach"],
+        "links": [("Cape Coral Car Lockouts", "/services/car-lockouts/"), ("Emergency Vehicle Lockouts", "/services/emergency-vehicle-lockout/"), ("Apartment Lockouts", "/services/apartment-lockouts/")],
+    },
+    "naples": {
+        "blurb": "Naples combines coastal living with busy retail corridors and condo communities — lockouts happen at beach lots, grocery stops, and front doors alike.",
+        "vehicle": "Whether you are locked out near Fifth Avenue, a beach parking area, or a residential street, Lockout Pro helps Naples drivers regain vehicle access.",
+        "home": "Condo and home lockouts are frequent in Naples communities. Have your building or street address ready when you call.",
+        "nearby": ["north-naples", "bonita-springs", "estero"],
+        "links": [("Naples Home Lockouts", "/services/home-lockouts/"), ("Condo Lockouts", "/services/condo-lockouts/"), ("Car Lockouts", "/services/car-lockouts/")],
+    },
+    "bonita-springs": {
+        "blurb": "Bonita Springs sits between Fort Myers and Naples with shopping plazas, residential communities, and beach access routes where lockouts are a real inconvenience.",
+        "vehicle": "Locked out in a Bonita Springs parking lot or driveway? Mobile vehicle unlock help is a call away.",
+        "home": "Residential lockouts in Bonita Springs neighborhoods and condo communities are part of our local coverage.",
+        "nearby": ["estero", "naples", "fort-myers-beach"],
+        "links": [("Vehicle Lockouts", "/services/car-lockouts/"), ("Home Lockouts", "/services/home-lockouts/"), ("Garage Lockouts", "/services/garage-lockouts/")],
+    },
+    "estero": {
+        "blurb": "Estero’s mix of retail, residential, and FGCU-area traffic makes vehicle and home lockouts a frequent local need.",
+        "vehicle": "From shopping centers to neighborhood streets, Estero drivers call Lockout Pro for car and SUV lockout help.",
+        "home": "Apartment, condo, and house lockouts across Estero communities are covered — call with your address.",
+        "nearby": ["bonita-springs", "san-carlos-park", "fort-myers"],
+        "links": [("Car Lockouts", "/services/car-lockouts/"), ("Apartment Lockouts", "/services/apartment-lockouts/"), ("Emergency Lockouts", "/services/emergency-vehicle-lockout/")],
+    },
+    "north-naples": {
+        "blurb": "North Naples blends busy commercial corridors with residential and condo living — lockouts happen on both sides of the day.",
+        "vehicle": "North Naples vehicle lockouts are common after errands and appointments. We come to your location.",
+        "home": "Condo and home lockout assistance is available across North Naples communities.",
+        "nearby": ["naples", "bonita-springs", "estero"],
+        "links": [("Condo Lockouts", "/services/condo-lockouts/"), ("Car Lockouts", "/services/car-lockouts/"), ("Home Lockouts", "/services/home-lockouts/")],
+    },
+    "fort-myers-beach": {
+        "blurb": "Fort Myers Beach lockouts often happen after beach days, parking searches, and condo returns — when spare keys are nowhere nearby.",
+        "vehicle": "Keys locked in the car near the beach or island parking? Call for mobile unlock help on Fort Myers Beach.",
+        "home": "Condo and rental lockouts are a frequent beach-community call. Share the building name and unit when you can.",
+        "nearby": ["fort-myers", "san-carlos-park", "bonita-springs"],
+        "links": [("Trunk Lockouts", "/services/trunk-lockouts/"), ("Condo Lockouts", "/services/condo-lockouts/"), ("Emergency Lockouts", "/services/emergency-vehicle-lockout/")],
+    },
+    "lehigh-acres": {
+        "blurb": "Lehigh Acres covers a wide residential footprint — distance from a spare key makes lockouts especially stressful.",
+        "vehicle": "Car and truck lockouts across Lehigh Acres streets and driveways are part of our Lee County coverage.",
+        "home": "House lockouts in Lehigh Acres happen day and night. Call with your address for residential unlock help.",
+        "nearby": ["fort-myers", "san-carlos-park", "estero"],
+        "links": [("Home Lockouts", "/services/home-lockouts/"), ("Car Lockouts", "/services/car-lockouts/"), ("Keys Locked In Car", "/services/keys-locked-in-car/")],
+    },
+    "san-carlos-park": {
+        "blurb": "San Carlos Park sits along key routes between Fort Myers and Estero, with residential streets and commercial stops where lockouts occur.",
+        "vehicle": "Locked out near US 41 or a neighborhood street in San Carlos Park? We provide mobile vehicle unlock help.",
+        "home": "Residential lockout assistance is available for San Carlos Park homes and nearby communities.",
+        "nearby": ["fort-myers", "estero", "fort-myers-beach"],
+        "links": [("Car Lockouts", "/services/car-lockouts/"), ("Home Lockouts", "/services/home-lockouts/"), ("Emergency Residential Lockouts", "/services/emergency-residential-lockout/")],
+    },
+    "north-fort-myers": {
+        "blurb": "North Fort Myers drivers and residents deal with lockouts across residential roads, shopping stops, and river-adjacent neighborhoods.",
+        "vehicle": "Vehicle lockout help is available throughout North Fort Myers — call with your location and vehicle details.",
+        "home": "Home and apartment lockouts in North Fort Myers are part of our local response coverage.",
+        "nearby": ["fort-myers", "cape-coral", "lehigh-acres"],
+        "links": [("Car Lockouts", "/services/car-lockouts/"), ("Apartment Lockouts", "/services/apartment-lockouts/"), ("Home Lockouts", "/services/home-lockouts/")],
+    },
+}
+
 AREAS = [
     {"slug": "fort-myers", "name": "Fort Myers", "county": "Lee County"},
     {"slug": "cape-coral", "name": "Cape Coral", "county": "Lee County"},
@@ -50,8 +124,33 @@ SERVICES = [
             ("Do you help in Naples and Cape Coral?", "Yes — Fort Myers, Cape Coral, Naples, Estero, Bonita Springs, Lehigh Acres, and surrounding communities."),
             ("What if I'm locked out of my house too?", "We also help with home, apartment, condo, and garage lockouts. Call and we'll get you sorted."),
         ],
-        "related": ["truck-suv-lockouts", "trunk-lockouts", "emergency-vehicle-lockout", "home-lockouts"],
-        "image": "/assets/images/auto-premium.webp",
+        "related": ["keys-locked-in-car", "truck-suv-lockouts", "trunk-lockouts", "emergency-vehicle-lockout"],
+        "image": "/assets/images/hellcat.webp",
+    },
+    {
+        "slug": "keys-locked-in-car",
+        "category": "automotive",
+        "name": "Keys Locked In Car",
+        "short": "Keys locked in the car? Mobile unlock help across Southwest Florida.",
+        "eyebrow": "AUTOMOTIVE",
+        "h1": "Keys Locked In Car — Southwest Florida",
+        "meta_title": "Keys Locked In Car SWFL | Unlock Help | Lockout Pro",
+        "meta_desc": "Keys locked in your car in Fort Myers, Cape Coral, Naples or SWFL? Lockout Pro provides careful unlock help. Call (239) 380-5240.",
+        "intro": "Keys on the seat. Doors locked. It happens to careful drivers every day across Southwest Florida. Lockout Pro SWFL helps you get back into your vehicle without turning a bad moment into vehicle damage.",
+        "body": [
+            ("Stay Calm And Stay Safe", "If a child or pet is inside — or the engine is running — say so immediately when you call. Move to a safe spot near the vehicle while you wait."),
+            ("Share Vehicle Details", "Year, make, and model help us arrive prepared. Exact location (parking lot name, mile marker, address) speeds everything up."),
+            ("Professional Entry Methods", "Modern vehicles are not designed for improvised tools. Professional lockout methods prioritize careful access so you can get moving again."),
+            ("Common SWFL Situations", "Grocery runs, beach days, school drop-offs, and workplace lots are frequent lockout scenes from Fort Myers to Naples."),
+        ],
+        "faqs": [
+            ("Can you unlock a car with keys inside?", "In many lockout situations, yes. Call with your vehicle details and location."),
+            ("Will you damage my door or window?", "We use professional methods intended to minimize risk. DIY tools are more likely to cause damage."),
+            ("What if keys are locked in the trunk?", "We also help with trunk lockouts — share the full situation when you call."),
+            ("Do you help in Cape Coral and Naples?", "Yes — and surrounding Southwest Florida communities."),
+        ],
+        "related": ["car-lockouts", "trunk-lockouts", "emergency-vehicle-lockout", "home-lockouts"],
+        "image": "/assets/images/hellcat.webp",
     },
     {
         "slug": "truck-suv-lockouts",
@@ -74,7 +173,7 @@ SERVICES = [
             ("Are you available after hours?", "Yes. Emergency lockout help is available 24/7 across our service area."),
         ],
         "related": ["car-lockouts", "fleet-vehicle-lockouts", "emergency-vehicle-lockout"],
-        "image": "/assets/images/auto-premium.webp",
+        "image": "/assets/images/hellcat.webp",
     },
     {
         "slug": "trunk-lockouts",
@@ -97,7 +196,7 @@ SERVICES = [
             ("Will you damage the trunk?", "Our goal is careful access whenever possible."),
         ],
         "related": ["car-lockouts", "emergency-vehicle-lockout", "truck-suv-lockouts"],
-        "image": "/assets/images/auto-premium.webp",
+        "image": "/assets/images/hellcat.webp",
     },
     {
         "slug": "emergency-vehicle-lockout",
@@ -120,7 +219,7 @@ SERVICES = [
             ("Do you also help with home lockouts?", "Yes. We help with vehicle and residential lockouts."),
         ],
         "related": ["car-lockouts", "trunk-lockouts", "emergency-residential-lockout"],
-        "image": "/assets/images/auto-premium.webp",
+        "image": "/assets/images/hellcat.webp",
     },
     {
         "slug": "fleet-vehicle-lockouts",
@@ -143,7 +242,7 @@ SERVICES = [
             ("Do you come to job sites?", "Yes — mobile service to your location across SWFL."),
         ],
         "related": ["truck-suv-lockouts", "car-lockouts", "emergency-vehicle-lockout"],
-        "image": "/assets/images/auto-premium.webp",
+        "image": "/assets/images/hellcat.webp",
     },
     # Residential
     {
@@ -291,7 +390,7 @@ RESOURCES = [
         "eyebrow": "VEHICLE GUIDE",
         "meta_desc": "Locked your keys in the car in SWFL? Stay safe, avoid damage, and get help fast.",
         "minutes": 5,
-        "image": "/assets/images/auto-premium.webp",
+        "image": "/assets/images/hellcat.webp",
         "intro": "A car lockout rarely happens at a convenient time. Here's what to do next — stay safe, avoid damage, and get help.",
         "sections": [
             ("1. Check Safety First", "If a child or pet is inside, call for help immediately. Move to a safe place near the vehicle."),
@@ -331,7 +430,7 @@ RESOURCES = [
         "eyebrow": "PREVENTION",
         "meta_desc": "Simple habits to reduce car lockouts for Southwest Florida drivers.",
         "minutes": 3,
-        "image": "/assets/images/auto-premium.webp",
+        "image": "/assets/images/hellcat.webp",
         "intro": "Most car lockouts are preventable. A few habits go a long way.",
         "sections": [
             ("Keep Keys In A Fixed Place", "Same pocket or bag pocket every time."),
@@ -367,7 +466,7 @@ RESOURCES = [
         "eyebrow": "URGENT",
         "meta_desc": "Locked out of a running car in SWFL? What to do next.",
         "minutes": 3,
-        "image": "/assets/images/auto-premium.webp",
+        "image": "/assets/images/hellcat.webp",
         "intro": "A running vehicle with keys inside raises the stakes. Stay calm and call for help.",
         "sections": [
             ("Call Immediately", "Tell us the engine is running and share your location plus vehicle details."),
@@ -377,6 +476,138 @@ RESOURCES = [
         ],
         "faqs": [
             ("Is this more urgent?", "Yes — especially with occupants inside or extreme heat."),
+        ],
+    },
+    {
+        "slug": "how-to-get-back-into-car-without-keys",
+        "title": "How Do I Get Back Into My Car Without Keys?",
+        "eyebrow": "VEHICLE GUIDE",
+        "meta_desc": "Locked out without keys in SWFL? Safer next steps than forcing a door — and when to call for unlock help.",
+        "minutes": 4,
+        "image": "/assets/images/hellcat.webp",
+        "intro": "Getting back into a locked car without keys is a common search — and a moment when DIY mistakes get expensive. Here is a calm, practical approach.",
+        "sections": [
+            ("Confirm The Doors Are Actually Locked", "Try every door and hatch before assuming you need forced entry."),
+            ("Check For A Spare", "Home spare, partner, or lockbox — a spare is still the simplest fix."),
+            ("Skip Improvised Tools", "Wedges, coat hangers, and YouTube hacks commonly damage seals, paint, and wiring."),
+            ("Call A Local Lockout Pro", "Share your location and vehicle year/make/model. Lockout Pro SWFL provides mobile unlock help across Southwest Florida."),
+            ("Related Help", "If keys are in the trunk, see our trunk lockout resources. If you are locked out of your house too, we can help with residential lockouts."),
+        ],
+        "faqs": [
+            ("Can a locksmith unlock a car without damaging it?", "Professional methods are designed for careful entry. Results depend on the vehicle and situation."),
+            ("Who do I call if I lock my keys in my car?", "In Southwest Florida, call Lockout Pro at (239) 380-5240."),
+        ],
+    },
+    {
+        "slug": "keys-locked-in-trunk-what-to-do",
+        "title": "Keys Locked In The Trunk? What To Do Next",
+        "eyebrow": "VEHICLE GUIDE",
+        "meta_desc": "Keys locked in the trunk in Southwest Florida? Practical next steps and professional unlock options.",
+        "minutes": 4,
+        "image": "/assets/images/hellcat.webp",
+        "intro": "Trunk lockouts are frustrating — especially after grocery runs or beach days. Here is what to do before the situation gets worse.",
+        "sections": [
+            ("Do Not Force The Trunk", "Prying can damage latches, seals, and paint quickly."),
+            ("Check Cabin Access Options", "On some vehicles, unlocking the cabin restores trunk release. On others, a trunk-focused approach is needed."),
+            ("Share Exact Details When You Call", "Tell us whether the cabin is also locked and share year, make, and model."),
+            ("Local SWFL Help", "Lockout Pro provides trunk lockout assistance across Fort Myers, Cape Coral, Naples, and nearby communities."),
+        ],
+        "faqs": [
+            ("Can you open a trunk without keys?", "In many cases yes, using vehicle-appropriate techniques."),
+            ("Is a trunk lockout different from a cabin lockout?", "Sometimes. Vehicle design determines the best approach."),
+        ],
+    },
+    {
+        "slug": "can-locksmith-unlock-car-without-damage",
+        "title": "Can A Locksmith Unlock A Car Without Damaging It?",
+        "eyebrow": "VEHICLE FAQ",
+        "meta_desc": "Learn how professional car lockout methods prioritize careful entry versus risky DIY tools.",
+        "minutes": 3,
+        "image": "/assets/images/hellcat.webp",
+        "intro": "Damage is the biggest fear during a car lockout. Professional unlock methods exist specifically to reduce that risk.",
+        "sections": [
+            ("Why DIY Tools Are Risky", "Improvised wedges and hooks often stress weather seals, paint edges, and interior linkages."),
+            ("What Professionals Aim For", "Controlled entry methods matched to the vehicle design."),
+            ("What Helps Most", "Accurate vehicle details and a clear description of the lockout."),
+            ("When To Call Immediately", "Child or pet inside, engine running, extreme heat, or an unsafe location."),
+        ],
+        "faqs": [
+            ("Is damage ever possible?", "Any entry method carries some risk. Professional service is intended to minimize it versus DIY."),
+            ("Should I break a window?", "Usually not as a first option — call for professional help first when it is safe to wait."),
+        ],
+    },
+    {
+        "slug": "does-roadside-assistance-cover-car-lockout",
+        "title": "Does Roadside Assistance Cover A Car Lockout?",
+        "eyebrow": "PLANNING",
+        "meta_desc": "Roadside assistance and car lockouts — what to check, and how Lockout Pro can help in SWFL.",
+        "minutes": 3,
+        "image": "/assets/images/hellcat.webp",
+        "intro": "Some roadside plans include lockout help. Coverage varies — and wait times can be long when you need help now.",
+        "sections": [
+            ("Check Your Plan Details", "Coverage, limits, and response expectations differ by provider."),
+            ("Time Matters In Florida Heat", "Waiting can be uncomfortable or unsafe — especially with kids, pets, or a running vehicle."),
+            ("Local Lockout Option", "Lockout Pro SWFL provides direct lockout help across Southwest Florida when you need a local response."),
+            ("Have Details Ready", "Membership info (if using roadside) plus vehicle year/make/model and exact location."),
+        ],
+        "faqs": [
+            ("Can I call Lockout Pro even if I have roadside assistance?", "Yes. Many people call a local lockout service for faster or clearer help."),
+        ],
+    },
+    {
+        "slug": "how-long-does-locksmith-take-unlock-car",
+        "title": "How Long Does It Take A Locksmith To Unlock A Car?",
+        "eyebrow": "TIMING",
+        "meta_desc": "What affects arrival and unlock timing for car lockouts in Southwest Florida.",
+        "minutes": 3,
+        "image": "/assets/images/hellcat.webp",
+        "intro": "Two clocks matter in a lockout: arrival time and unlock time. Both depend on location, demand, and vehicle details.",
+        "sections": [
+            ("Arrival Depends On Location", "Fort Myers, Cape Coral, Naples, and nearby communities have different travel patterns and call volume."),
+            ("Ask For A Realistic Estimate", "When you call, we provide an estimate based on your area and current calls."),
+            ("Unlock Time Varies By Vehicle", "Once on scene, many lockouts are completed relatively quickly — complexity still varies."),
+            ("Help Us Help You Faster", "Exact address/pin, vehicle details, and urgency notes (engine running, occupants) speed the process."),
+        ],
+        "faqs": [
+            ("Can you give an exact ETA online?", "Not without your location and current call status — calling is fastest."),
+        ],
+    },
+    {
+        "slug": "locked-out-of-apartment-what-to-do",
+        "title": "Locked Out Of Your Apartment? What To Do",
+        "eyebrow": "HOME GUIDE",
+        "meta_desc": "Locked out of an apartment in SWFL? Practical next steps and when to call for lockout help.",
+        "minutes": 4,
+        "image": "/assets/images/home-premium.webp",
+        "intro": "Apartment lockouts are stressful — especially with groceries, kids, or a late shift. Here is a simple plan.",
+        "sections": [
+            ("Check Building Options", "Roommate, neighbor with a spare, or after-hours management policy if available."),
+            ("Avoid Forcing The Door", "Damaged frames and locks create bigger problems than the lockout itself."),
+            ("Have Access Details Ready", "Community name, gate code, building, and unit help responders find you quickly."),
+            ("Call For Residential Lockout Help", "Lockout Pro SWFL helps with apartment lockouts across Southwest Florida — call (239) 380-5240."),
+        ],
+        "faqs": [
+            ("Can a locksmith unlock an apartment?", "In many residential lockout situations, yes. Share details when you call."),
+            ("Do you also unlock cars in the parking lot?", "Yes — vehicle lockouts are part of what we do."),
+        ],
+    },
+    {
+        "slug": "can-locksmith-unlock-house",
+        "title": "Can A Locksmith Unlock A House?",
+        "eyebrow": "HOME FAQ",
+        "meta_desc": "Yes — residential lockout help is available across Southwest Florida for houses and more.",
+        "minutes": 3,
+        "image": "/assets/images/home-premium.webp",
+        "intro": "If you are locked out of your house, professional residential lockout help is often the safest next step.",
+        "sections": [
+            ("House Lockouts Are Common", "Keys left inside, doors that latch behind you, and misplaced spares happen every day."),
+            ("What To Share When You Call", "Address, which door is locked, and any urgency details."),
+            ("Homes, Apartments, Condos, Garages", "Lockout Pro helps across residential lockout situations in Southwest Florida."),
+            ("After You Are Back Inside", "Consider a spare-key plan with someone you trust."),
+        ],
+        "faqs": [
+            ("Do I need to prove I live there?", "Be ready to confirm occupancy or ownership as needed for security."),
+            ("Are house unlocks available at night?", "Yes — emergency residential lockout help is available 24/7."),
         ],
     },
 ]
@@ -586,7 +817,7 @@ def org_schema():
         "name": BRAND,
         "url": DOMAIN + "/",
         "logo": DOMAIN + "/LOGO.png",
-        "image": DOMAIN + "/assets/images/hero-desktop.webp",
+        "image": DOMAIN + "/assets/images/hero.webp",
         "telephone": PHONE_SCHEMA,
         "priceRange": "$$",
         "description": "24/7 lockout help across Southwest Florida — vehicle lockouts and home lockouts for cars, trucks, SUVs, houses, apartments, condos, and garages.",
@@ -608,7 +839,7 @@ def redirect_page(title, message, target, canonical):
 <a class="skip-link" href="#main">Skip to content</a>
 {header("services")}
 <section class="page-hero" id="main">
-  <div class="page-hero-media" style="background-image:url('/assets/images/hero-desktop.webp')"></div>
+  <div class="page-hero-media" style="background-image:url('/assets/images/hero.webp')"></div>
   <div class="page-hero-veil"></div>
   <div class="container page-hero-content">
     <p class="eyebrow">LOCKOUT PRO SWFL</p>
@@ -651,7 +882,7 @@ def build_service_pages():
 <a class="skip-link" href="#main">Skip to content</a>
 {header("services")}
 <section class="page-hero" id="main">
-  <div class="page-hero-media" style="background-image:url('/assets/images/hero-desktop.webp')"></div>
+  <div class="page-hero-media" style="background-image:url('/assets/images/hero.webp')"></div>
   <div class="page-hero-veil"></div>
   <div class="container page-hero-content">
     <p class="eyebrow">LOCKOUT SERVICES</p>
@@ -720,7 +951,13 @@ def build_service_pages():
         <p>Serving {areas}, and nearby communities. Call <strong>{PHONE_DISPLAY}</strong>.</p>
       </div>
       {body}
+      <section class="content-block"><h2>Service Areas</h2><p>Available across Southwest Florida, including {areas}.</p></section>
       <section class="content-block"><h2>Related Services</h2><ul class="text-list">{related}</ul></section>
+      <section class="content-block"><h2>Guides</h2><ul class="text-list">
+        <li><a href="/resources/locked-out-of-your-car/">Locked out of your car?</a></li>
+        <li><a href="/resources/locked-out-of-your-house/">Locked out of your house?</a></li>
+        <li><a href="/resources/how-much-does-a-car-lockout-cost/">How much does a car lockout cost?</a></li>
+      </ul></section>
       <section class="content-block"><h2>FAQ</h2><div class="faq-list">{faq_html(s["faqs"])}</div></section>
     </div>
     {sidebar(s["slug"])}
@@ -759,7 +996,7 @@ def build_location_pages():
 <a class="skip-link" href="#main">Skip to content</a>
 {header("locations")}
 <section class="page-hero" id="main">
-  <div class="page-hero-media" style="background-image:url('/assets/images/home-premium.webp')"></div>
+  <div class="page-hero-media" style="background-image:url('/assets/images/map.webp')"></div>
   <div class="page-hero-veil"></div>
   <div class="container page-hero-content">
     <p class="eyebrow">SOUTHWEST FLORIDA</p>
@@ -774,9 +1011,15 @@ def build_location_pages():
 </body></html>''')
 
     for a in AREAS:
-        auto = "".join(f'<li><a href="/services/{s["slug"]}/">{esc(s["name"])}</a></li>' for s in AUTO_SERVICES[:4])
-        home = "".join(f'<li><a href="/services/{s["slug"]}/">{esc(s["name"])}</a></li>' for s in HOME_SERVICES[:4])
-        others = "".join(f'<li><a href="/locations/{o["slug"]}/">{esc(o["name"])}</a></li>' for o in AREAS if o["slug"] != a["slug"])
+        detail = AREA_DETAILS.get(a["slug"], {})
+        auto = "".join(f'<li><a href="/services/{s["slug"]}/">{esc(s["name"])} in {esc(a["name"])}</a></li>' for s in AUTO_SERVICES[:5])
+        home = "".join(f'<li><a href="/services/{s["slug"]}/">{esc(s["name"])} in {esc(a["name"])}</a></li>' for s in HOME_SERVICES[:4])
+        useful = "".join(f'<li><a href="{href}">{esc(label)}</a></li>' for label, href in detail.get("links", []))
+        near_slugs = detail.get("nearby")
+        if near_slugs:
+            others = "".join(f'<li><a href="/locations/{o["slug"]}/">{esc(o["name"])}</a></li>' for o in AREAS if o["slug"] in near_slugs)
+        else:
+            others = "".join(f'<li><a href="/locations/{o["slug"]}/">{esc(o["name"])}</a></li>' for o in AREAS if o["slug"] != a["slug"])
         crumb_nav, crumb_schema = breadcrumbs([("Home", "/"), ("Service Areas", "/locations/"), (a["name"], None)])
         faqs = [
             (f"Do you unlock cars in {a['name']}?", f"Yes. We provide vehicle lockout help throughout {a['name']} and nearby {a['county']} communities."),
@@ -800,7 +1043,7 @@ def build_location_pages():
 <a class="skip-link" href="#main">Skip to content</a>
 {header("locations")}
 <section class="page-hero" id="main">
-  <div class="page-hero-media" style="background-image:url('/assets/images/hero-desktop.webp')"></div>
+  <div class="page-hero-media" style="background-image:url('/assets/images/hero.webp')"></div>
   <div class="page-hero-veil"></div>
   <div class="container page-hero-content">
     <p class="eyebrow">{esc(a["county"]).upper()}</p>
@@ -817,13 +1060,34 @@ def build_location_pages():
   <div class="container page-layout-grid">
     <div class="page-main">
       <div class="content-block intro-block">
-        <p>Locked out in <strong>{esc(a["name"])}</strong>? Lockout Pro SWFL is here to help — whether you're outside your car or outside your front door.</p>
-        <p>Call <strong>{PHONE_DISPLAY}</strong> and we'll get you moving in the right direction.</p>
+        <p>Locked out in <strong>{esc(a["name"])}</strong>? Lockout Pro SWFL helps with vehicle and home lockouts across {esc(a["county"])}.</p>
+        <p>{esc(detail.get("blurb", "Local lockout help for drivers and residents who need to get back inside quickly."))}</p>
+        <p>Call <strong>{PHONE_DISPLAY}</strong> and we will give you a realistic next step.</p>
       </div>
-      <section class="content-block"><h2>Vehicle Lockouts in {esc(a["name"])}</h2><ul class="text-list">{auto}</ul></section>
-      <section class="content-block"><h2>Home Lockouts in {esc(a["name"])}</h2><ul class="text-list">{home}</ul></section>
+      <section class="content-block">
+        <h2>Vehicle Lockouts in {esc(a["name"])}</h2>
+        <p>{esc(detail.get("vehicle", "Mobile unlock help for cars, trucks, and SUVs."))}</p>
+        <ul class="text-list">{auto}</ul>
+      </section>
+      <section class="content-block">
+        <h2>Home Lockouts in {esc(a["name"])}</h2>
+        <p>{esc(detail.get("home", "Residential lockout help for houses, apartments, condos, and garages."))}</p>
+        <ul class="text-list">{home}</ul>
+      </section>
+      <section class="content-block">
+        <h2>Helpful Local Links</h2>
+        <ul class="text-list">{useful}</ul>
+      </section>
       <section class="content-block"><h2>Nearby Areas</h2><ul class="text-list">{others}</ul></section>
       <section class="content-block"><h2>FAQ</h2><div class="faq-list">{faq_html(faqs)}</div></section>
+      <section class="content-block">
+        <h2>Lockout Guides</h2>
+        <ul class="text-list">
+          <li><a href="/resources/locked-out-of-your-car/">Locked out of your car?</a></li>
+          <li><a href="/resources/locked-out-of-your-house/">Locked out of your house?</a></li>
+          <li><a href="/resources/how-to-get-back-into-car-without-keys/">Get back into a car without keys</a></li>
+        </ul>
+      </section>
     </div>
     {sidebar()}
   </div>
@@ -867,7 +1131,7 @@ def build_resource_pages():
 <a class="skip-link" href="#main">Skip to content</a>
 {header("resources")}
 <section class="page-hero" id="main">
-  <div class="page-hero-media" style="background-image:url('/assets/images/hero-desktop.webp')"></div>
+  <div class="page-hero-media" style="background-image:url('/assets/images/hero.webp')"></div>
   <div class="page-hero-veil"></div>
   <div class="container page-hero-content">
     <p class="eyebrow">RESOURCE CENTER</p>
