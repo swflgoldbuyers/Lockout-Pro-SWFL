@@ -1187,11 +1187,10 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
     flex-direction: row;
   }
   .steps-rail li { flex: 1; }
+  .review-card { flex: 0 0 calc((100% - 0.55rem) / 2); }
 }
-@media (max-width: 700px) {
-  .help-services { grid-template-columns: 1fr; }
-  .steps-rail { flex-direction: column; }
-}
+
+@media (max-width: 1100px) {
   .category-split,
   .help-services { grid-template-columns: 1fr; }
   .help-grid { grid-template-columns: 1fr; }
