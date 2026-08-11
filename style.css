@@ -668,7 +668,7 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
   inset: 0;
   background:
     url("/assets/images/map.webp") center 40%/cover no-repeat;
-  opacity: 0.22;
+  opacity: 0.28;
   filter: grayscale(0.15) contrast(1.05);
   pointer-events: none;
 }
