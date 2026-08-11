@@ -549,7 +549,8 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(4, 13, 26, 0.35) 0%, rgba(4, 13, 26, 0.72) 55%, rgba(4, 13, 26, 0.92) 100%);
+    linear-gradient(105deg, rgba(4, 13, 26, 0.82) 0%, rgba(4, 13, 26, 0.45) 42%, rgba(4, 13, 26, 0.55) 70%, rgba(4, 13, 26, 0.88) 100%),
+    linear-gradient(180deg, rgba(4, 13, 26, 0.2) 0%, rgba(4, 13, 26, 0.85) 100%);
   pointer-events: none;
 }
 .local-band-content {
@@ -999,13 +1000,16 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
   .resource-grid,
   .service-tile-grid { grid-template-columns: 1fr; }
   .home-hero {
-    min-height: clamp(480px, 78svh, 620px);
+    min-height: clamp(460px, 72svh, 580px);
     align-items: end;
-    padding-bottom: 2rem;
+    padding-bottom: 1.75rem;
+  }
+  .home-hero-media img {
+    object-position: center 35%;
   }
   .home-hero-veil {
     background:
-      linear-gradient(180deg, rgba(4, 13, 26, 0.55) 0%, rgba(4, 13, 26, 0.45) 35%, rgba(4, 13, 26, 0.88) 100%);
+      linear-gradient(180deg, rgba(4, 13, 26, 0.5) 0%, rgba(4, 13, 26, 0.42) 32%, rgba(4, 13, 26, 0.9) 100%);
   }
   .hero-cta-row {
     flex-direction: column;
