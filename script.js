@@ -48,7 +48,7 @@
     revealItems.forEach((el) => el.classList.add("is-in"));
   }
 
-  // Reviews carousel — only mounts when real reviews exist
+  // Reviews carousel — mounts when written reviews exist (name + text required)
   const reviews = Array.isArray(window.LOCKOUT_PRO_REVIEWS)
     ? window.LOCKOUT_PRO_REVIEWS.filter((r) => r && r.text && r.name)
     : [];
@@ -61,32 +61,45 @@
   if (root && track && reviews.length) {
     root.hidden = false;
 
-    const stars = (n) => {
-      const rating = Math.max(0, Math.min(5, Number(n) || 0));
-      return "★★★★★".slice(0, Math.round(rating)) + "☆☆☆☆☆".slice(Math.round(rating));
-    };
+    const escapeHtml = (value) =>
+      String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
 
     track.innerHTML = reviews
-      .map(
-        (r) => `
-      <article class="review-card">
+      .map((r) => {
+        const source =
+          r.source === "Google"
+            ? `<span class="review-source" aria-label="Google review">Google</span>`
+            : "";
+        const profile = r.profile
+          ? `<span class="review-profile">${escapeHtml(r.profile)}</span>`
+          : "";
+        const age = r.age
+          ? `<span class="review-age">${escapeHtml(r.age)}</span>`
+          : "";
+
+        return `
+      <article class="review-card" data-review-type="${escapeHtml(r.type || "real")}">
         <div class="review-card-top">
-          <span class="review-stars" aria-label="${Number(r.rating) || 5} out of 5 stars">${stars(r.rating || 5)}</span>
-          ${r.source ? `<span class="review-source">${r.source}</span>` : ""}
+          <span class="review-stars" aria-hidden="true">★★★★★</span>
+          ${source}
         </div>
-        <p class="review-text">“${String(r.text).replace(/</g, "&lt;")}”</p>
+        <p class="review-text">“${escapeHtml(r.text)}”</p>
         <div class="review-meta">
-          <strong>${String(r.name).replace(/</g, "&lt;")}</strong>
-          ${r.meta ? `<span>${String(r.meta).replace(/</g, "&lt;")}</span>` : ""}
+          <strong class="review-name">${escapeHtml(r.name)}</strong>
+          ${profile}
+          ${age}
         </div>
-      </article>`
-      )
+      </article>`;
+      })
       .join("");
 
     let index = 0;
     const cards = () => Array.from(track.children);
     const pageSize = () => (window.innerWidth < 700 ? 1 : window.innerWidth < 1000 ? 2 : 3);
-
     const maxIndex = () => Math.max(0, cards().length - pageSize());
 
     const renderDots = () => {
@@ -99,9 +112,13 @@
 
     const go = (i) => {
       index = Math.max(0, Math.min(maxIndex(), i));
-      const card = cards()[index];
-      if (card) {
-        track.scrollTo({ left: card.offsetLeft - track.offsetLeft, behavior: "smooth" });
+      const list = cards();
+      const card = list[index];
+      if (card && list[0]) {
+        track.scrollTo({
+          left: card.offsetLeft - list[0].offsetLeft,
+          behavior: "smooth",
+        });
       }
       renderDots();
     };
@@ -113,13 +130,33 @@
       if (btn) go(Number(btn.dataset.i));
     });
 
+    // Touch / swipe support
+    let touchStartX = 0;
+    track.addEventListener(
+      "touchstart",
+      (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      },
+      { passive: true }
+    );
+    track.addEventListener(
+      "touchend",
+      (e) => {
+        const delta = e.changedTouches[0].screenX - touchStartX;
+        if (Math.abs(delta) < 40) return;
+        if (delta < 0) go(index + 1);
+        else go(index - 1);
+      },
+      { passive: true }
+    );
+
     let autoTimer = null;
     const startAuto = () => {
       stopAuto();
       if (cards().length <= pageSize()) return;
       autoTimer = window.setInterval(() => {
         go(index >= maxIndex() ? 0 : index + 1);
-      }, 5200);
+      }, 7000);
     };
     const stopAuto = () => {
       if (autoTimer) window.clearInterval(autoTimer);
@@ -128,6 +165,8 @@
 
     root.addEventListener("mouseenter", stopAuto);
     root.addEventListener("mouseleave", startAuto);
+    root.addEventListener("focusin", stopAuto);
+    root.addEventListener("focusout", startAuto);
     window.addEventListener("resize", () => go(Math.min(index, maxIndex())));
 
     renderDots();
