@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-"""Generate Lockout Pro SWFL — automotive LOCKOUT specialist site."""
+"""Generate Lockout Pro SWFL — automotive + residential lockouts."""
 
 from pathlib import Path
 from datetime import date
 import json
-import shutil
 
 ROOT = Path(__file__).resolve().parent
 DOMAIN = "https://lockoutproswfl.com"
@@ -29,244 +28,371 @@ AREAS = [
 ]
 
 SERVICES = [
+    # Automotive
     {
         "slug": "car-lockouts",
+        "category": "automotive",
         "name": "Car Lockouts",
-        "short": "Keys locked inside? We unlock cars, trucks, and SUVs across Southwest Florida.",
-        "eyebrow": "PRIMARY SERVICE",
+        "short": "Locked out of your car? We'll come to you and get you back inside.",
+        "eyebrow": "AUTOMOTIVE",
         "h1": "Car Lockout Service in Southwest Florida",
-        "meta_title": "Car Lockouts SWFL | 24/7 Vehicle Unlock Service | Lockout Pro",
-        "meta_desc": "Locked out of your car in Fort Myers, Cape Coral, Naples or SWFL? Lockout Pro specializes in fast car lockout service. Call (239) 380-5240.",
-        "intro": "Keys on the seat. Door locked. Heat climbing. A car lockout is exactly what Lockout Pro SWFL is built for — getting you back into your vehicle without turning a bad moment into vehicle damage.",
+        "meta_title": "Car Lockouts SWFL | Fast Vehicle Unlock | Lockout Pro",
+        "meta_desc": "Locked out of your car in Fort Myers, Cape Coral, Naples or SWFL? Lockout Pro provides fast car lockout service. Call (239) 380-5240.",
+        "intro": "Keys on the seat. Door locked. Heat climbing. Lockout Pro SWFL helps drivers across Southwest Florida get back into their cars quickly and carefully.",
         "body": [
-            ("Locked Out? We're On The Way", "Lockout Pro focuses on automotive lockouts. When your keys are inside the car, truck, or SUV, call us. We come to your location across Southwest Florida with professional entry tools designed for modern vehicles."),
-            ("What To Tell Us When You Call", "Share your exact location and your vehicle year, make, and model. If a child or pet is inside, or the engine is running, tell us immediately so we can prioritize accordingly."),
-            ("Damage-Conscious Entry", "Improvised tools and viral unlock hacks commonly damage weather seals, paint, wiring, or linkages. Professional automotive lockout methods are built to open the door carefully."),
+            ("Help When You Need It", "Call with your location and vehicle details. We come to you — parking lots, driveways, workplaces, and roadside locations across SWFL."),
+            ("What To Share When You Call", "Your exact location and vehicle year, make, and model help us arrive prepared. If a child or pet is inside, or the engine is running, tell us right away."),
+            ("Professional Entry", "Modern vehicles aren't built for improvised tools. Professional lockout methods are designed to open the door carefully and get you moving again."),
         ],
         "faqs": [
             ("How fast can you unlock my car?", "Arrival time depends on your location and current calls. When you call, we give a realistic estimate for your area."),
-            ("Will unlocking damage my door?", "We use professional automotive entry methods intended to minimize risk. DIY tools are far more likely to cause damage."),
-            ("Do you unlock cars in Naples and Cape Coral?", "Yes. We cover Fort Myers, Cape Coral, Naples, Estero, Bonita Springs, Lehigh Acres, and surrounding Southwest Florida communities."),
-            ("What if my keys are lost, not locked inside?", "Lockout Pro specializes in lockouts. For key replacement and programming, our related company A Good Locksmith can help."),
+            ("Will unlocking damage my door?", "We use professional entry methods intended to minimize risk. DIY tools are more likely to cause damage."),
+            ("Do you help in Naples and Cape Coral?", "Yes — Fort Myers, Cape Coral, Naples, Estero, Bonita Springs, Lehigh Acres, and surrounding communities."),
+            ("What if I'm locked out of my house too?", "We also help with home, apartment, condo, and garage lockouts. Call and we'll get you sorted."),
         ],
-        "related": ["emergency-vehicle-lockout", "trunk-lockouts", "fleet-vehicle-lockouts"],
+        "related": ["truck-suv-lockouts", "trunk-lockouts", "emergency-vehicle-lockout", "home-lockouts"],
         "image": "/assets/images/hero-collage.jpg",
     },
     {
-        "slug": "emergency-vehicle-lockout",
-        "name": "Emergency Vehicle Lockout",
-        "short": "24/7 emergency response when you're locked out of your vehicle.",
-        "eyebrow": "24/7 EMERGENCY",
-        "h1": "Emergency Vehicle Lockout Service",
-        "meta_title": "Emergency Vehicle Lockout SWFL | 24/7 | Lockout Pro",
-        "meta_desc": "Emergency vehicle lockout help in Southwest Florida. Locked out day or night? Call Lockout Pro at (239) 380-5240.",
-        "intro": "Lockouts don't wait for business hours. Lockout Pro SWFL provides emergency vehicle lockout service across Southwest Florida when you need help now.",
+        "slug": "truck-suv-lockouts",
+        "category": "automotive",
+        "name": "Truck & SUV Lockouts",
+        "short": "Locked out of your truck or SUV? Mobile unlock help across SWFL.",
+        "eyebrow": "AUTOMOTIVE",
+        "h1": "Truck & SUV Lockout Service",
+        "meta_title": "Truck & SUV Lockouts SWFL | Lockout Pro",
+        "meta_desc": "Locked out of a truck or SUV in Southwest Florida? Lockout Pro provides mobile unlock service. Call (239) 380-5240.",
+        "intro": "Trucks and SUVs lock out just like cars — and Florida heat doesn't make waiting easier. Lockout Pro SWFL provides mobile unlock help for trucks and SUVs across Southwest Florida.",
         "body": [
-            ("Built For Urgent Lockouts", "Whether you're locked out after dark, at work, at the store, or on the roadside, our focus is clear: get you back into your vehicle."),
-            ("When It's An Emergency", "Call immediately if someone is locked inside, the engine is running with kids or pets in the car, you're in an unsafe area, or you're stranded in extreme heat."),
-            ("Clear Communication", "When you call, we confirm your location, vehicle details, and a realistic arrival window — so you're not left guessing."),
+            ("Built For Real-World Vehicles", "From daily-driver SUVs to work trucks, we help get you back inside when keys are locked in the cabin."),
+            ("Job Sites And Parking Lots", "Whether you're at home, work, a store, or a job site, call with your location and vehicle details."),
+            ("Clear Next Steps", "We'll confirm your location, give a realistic arrival window, and come to you."),
         ],
         "faqs": [
-            ("Are you available 24/7 for lockouts?", "Yes. Emergency vehicle lockout service is available around the clock across our SWFL coverage area."),
-            ("What should I do while I wait?", "Stay near the vehicle in a safe place. Avoid forcing the door with household tools. See our locked-out guide for practical tips."),
-            ("Do you only do lockouts?", "Yes — Lockout Pro is the automotive lockout specialist. For key replacement, programming, or home/business locks, visit A Good Locksmith."),
-            ("What areas do you cover after hours?", "Fort Myers, Cape Coral, Naples, Estero, Bonita Springs, and surrounding Southwest Florida communities."),
+            ("Do you unlock pickup trucks?", "In many cases yes. Call with year, make, and model."),
+            ("What about large SUVs?", "Yes — share your vehicle details when you call so we can prepare."),
+            ("Are you available after hours?", "Yes. Emergency lockout help is available 24/7 across our service area."),
         ],
-        "related": ["car-lockouts", "trunk-lockouts", "commercial-vehicle-lockout"],
-        "image": "/assets/images/swfl-vehicles.jpg",
+        "related": ["car-lockouts", "fleet-vehicle-lockouts", "emergency-vehicle-lockout"],
+        "image": "/assets/images/driving.jpg",
     },
     {
         "slug": "trunk-lockouts",
+        "category": "automotive",
         "name": "Trunk Lockouts",
-        "short": "Keys locked in the trunk? We help you regain access carefully.",
-        "eyebrow": "TRUNK ACCESS",
+        "short": "Keys locked in the trunk? We'll help you regain access carefully.",
+        "eyebrow": "AUTOMOTIVE",
         "h1": "Trunk Lockout Service",
         "meta_title": "Trunk Lockouts SWFL | Keys Locked In Trunk | Lockout Pro",
         "meta_desc": "Keys locked in the trunk in Fort Myers or SWFL? Lockout Pro provides professional trunk lockout help. Call (239) 380-5240.",
-        "intro": "Keys in the trunk and no easy way back in — that's a lockout problem Lockout Pro handles. We use vehicle-appropriate methods, not crowbars.",
+        "intro": "Keys in the trunk with no easy way back in — Lockout Pro SWFL helps with careful trunk lockout service across Southwest Florida.",
         "body": [
-            ("Cabin First Or Trunk Direct", "Some vehicles allow cabin entry that restores trunk release. Others need a trunk-focused approach. We choose the method that fits your vehicle."),
-            ("Protect Latches And Seals", "Forced entry can destroy trunk latches and weather seals. Professional lockout methods prioritize controlled access."),
-            ("Common Situations", "Grocery runs, beach days, and parking lots across Southwest Florida are frequent trunk-lockout scenes."),
+            ("The Right Approach For Your Vehicle", "Some vehicles allow cabin entry that restores trunk release. Others need a trunk-focused approach. We'll choose what fits your vehicle."),
+            ("Protect Latches And Seals", "Forced entry can damage trunk hardware. Professional methods prioritize controlled access."),
+            ("Common Situations", "Grocery runs, beach days, and busy parking lots are frequent trunk-lockout scenes across SWFL."),
         ],
         "faqs": [
-            ("Can you open a trunk without keys?", "In many cases yes, using vehicle-appropriate lockout techniques."),
-            ("My keys are in the trunk and the car is locked — can you help?", "Yes. That's a common emergency call for Lockout Pro."),
-            ("Will you damage the trunk?", "Our goal is careful, non-destructive access whenever possible."),
-            ("What if only the electronic trunk release failed?", "Tell us the symptoms when you call so we can prepare the right approach."),
+            ("Can you open a trunk without keys?", "In many cases yes, using vehicle-appropriate techniques."),
+            ("My keys are in the trunk and the car is locked — can you help?", "Yes. That's a common call for us."),
+            ("Will you damage the trunk?", "Our goal is careful access whenever possible."),
         ],
-        "related": ["car-lockouts", "emergency-vehicle-lockout", "fleet-vehicle-lockouts"],
+        "related": ["car-lockouts", "emergency-vehicle-lockout", "truck-suv-lockouts"],
         "image": "/assets/images/swfl-vehicles.jpg",
     },
     {
-        "slug": "fleet-vehicle-lockouts",
-        "name": "Fleet Vehicle Lockouts",
-        "short": "Lockout response for work trucks, vans, and company vehicles.",
-        "eyebrow": "FLEET LOCKOUTS",
-        "h1": "Fleet Vehicle Lockout Service",
-        "meta_title": "Fleet Vehicle Lockouts SWFL | Work Truck Unlock | Lockout Pro",
-        "meta_desc": "Fleet vehicle locked out in SWFL? Lockout Pro helps businesses with work truck, van, and company vehicle lockouts. Call (239) 380-5240.",
-        "intro": "A locked work vehicle stops a job. Lockout Pro SWFL helps Southwest Florida businesses get fleet vehicles open again — quickly and without unnecessary complication.",
+        "slug": "emergency-vehicle-lockout",
+        "category": "automotive",
+        "name": "Emergency Vehicle Lockouts",
+        "short": "24/7 help when you're locked out of your vehicle.",
+        "eyebrow": "24/7 EMERGENCY",
+        "h1": "Emergency Vehicle Lockout Service",
+        "meta_title": "Emergency Vehicle Lockouts SWFL | 24/7 | Lockout Pro",
+        "meta_desc": "Emergency vehicle lockout help in Southwest Florida. Locked out day or night? Call Lockout Pro at (239) 380-5240.",
+        "intro": "Lockouts don't wait for business hours. Lockout Pro SWFL provides emergency vehicle lockout help across Southwest Florida when you need assistance now.",
         "body": [
-            ("Downtime Matters", "When a truck, van, or company car is locked with keys inside, we focus on practical turnaround so your team can get back to work."),
-            ("What Fleets Call Us For", "Keys locked in cabins, trunks, and job-site vehicles across Fort Myers, Cape Coral, Naples, and nearby communities."),
-            ("One Call Coordination", "Share the vehicle details and location — we'll coordinate mobile lockout service across our coverage area."),
+            ("Urgent Situations", "Call right away if someone is locked inside, the engine is running, you're in an unsafe area, or you're stranded in extreme heat."),
+            ("Clear Communication", "When you call, we confirm your location, vehicle details, and a realistic arrival window."),
+            ("Local Coverage", "Mobile response across Fort Myers, Cape Coral, Naples, Estero, Bonita Springs, and surrounding communities."),
+        ],
+        "faqs": [
+            ("Are you available 24/7?", "Yes — emergency lockout help around the clock across our SWFL area."),
+            ("What should I do while I wait?", "Stay near the vehicle in a safe place. Avoid forcing the door with household tools."),
+            ("Do you also help with home lockouts?", "Yes. We help with vehicle and residential lockouts."),
+        ],
+        "related": ["car-lockouts", "trunk-lockouts", "emergency-residential-lockout"],
+        "image": "/assets/images/hero-collage.jpg",
+    },
+    {
+        "slug": "fleet-vehicle-lockouts",
+        "category": "automotive",
+        "name": "Fleet Vehicle Lockouts",
+        "short": "Lockout help for work trucks, vans, and company vehicles.",
+        "eyebrow": "AUTOMOTIVE",
+        "h1": "Fleet Vehicle Lockout Service",
+        "meta_title": "Fleet Vehicle Lockouts SWFL | Work Vehicle Unlock | Lockout Pro",
+        "meta_desc": "Fleet vehicle locked out in SWFL? Lockout Pro helps with work truck, van, and company vehicle lockouts. Call (239) 380-5240.",
+        "intro": "A locked work vehicle stops a job. Lockout Pro SWFL helps Southwest Florida businesses get fleet vehicles open again.",
+        "body": [
+            ("Practical Turnaround", "Share the vehicle details and location — we'll coordinate mobile lockout service across our coverage area."),
+            ("Work Trucks And Vans", "Keys locked in cabins and job-site vehicles are common calls. We're ready to help."),
+            ("One Number To Call", f"Reach us at {PHONE_DISPLAY} for fleet lockout assistance."),
         ],
         "faqs": [
             ("Do you help small business fleets?", "Yes — from a few vehicles to larger local fleets needing lockout help."),
             ("Can you unlock work trucks and vans?", "In many cases yes. Call with year, make, and model."),
-            ("What if we need spare keys for the fleet?", "Lockout Pro focuses on lockouts. For key and fob needs, ask about A Good Locksmith."),
-            ("Do you come to job sites?", "Yes — mobile lockout service to your location across SWFL."),
+            ("Do you come to job sites?", "Yes — mobile service to your location across SWFL."),
         ],
-        "related": ["commercial-vehicle-lockout", "car-lockouts", "emergency-vehicle-lockout"],
+        "related": ["truck-suv-lockouts", "car-lockouts", "emergency-vehicle-lockout"],
         "image": "/assets/images/driving.jpg",
     },
+    # Residential
     {
-        "slug": "commercial-vehicle-lockout",
-        "name": "Commercial Vehicle Lockout",
-        "short": "Lockout help for commercial vehicles stranded with keys inside.",
-        "eyebrow": "COMMERCIAL",
-        "h1": "Commercial Vehicle Lockout Service",
-        "meta_title": "Commercial Vehicle Lockout SWFL | Lockout Pro",
-        "meta_desc": "Commercial vehicle lockout service in Southwest Florida. Locked out of a work or commercial vehicle? Call Lockout Pro at (239) 380-5240.",
-        "intro": "Commercial vehicles lock out the same way daily drivers do — and the cost of waiting is often higher. Lockout Pro SWFL provides focused lockout response for commercial vehicles across Southwest Florida.",
+        "slug": "home-lockouts",
+        "category": "residential",
+        "name": "Home Lockouts",
+        "short": "Locked out of your house? Fast, professional residential lockout help.",
+        "eyebrow": "RESIDENTIAL",
+        "h1": "Home Lockout Service in Southwest Florida",
+        "meta_title": "Home Lockouts SWFL | House Unlock Service | Lockout Pro",
+        "meta_desc": "Locked out of your house in Fort Myers, Cape Coral, Naples or SWFL? Lockout Pro provides home lockout service. Call (239) 380-5240.",
+        "intro": "Locked out of your house after a long day? Lockout Pro SWFL provides professional home lockout help across Southwest Florida — so you can get back inside without the stress spiral.",
         "body": [
-            ("Business Lockouts, Handled Simply", "Call with your location and vehicle details. We come to you and focus on getting the vehicle open."),
-            ("Parking Lots, Job Sites, And Depots", "Wherever the commercial vehicle is stranded in our service area, mobile lockout help is the point."),
-            ("Related Needs", "If your situation involves key replacement rather than a lockout, we'll point you to the right help through A Good Locksmith."),
+            ("Back Inside Your Home", "Call with your address and a quick description of the door or lock situation. We'll come to you."),
+            ("Houses Across SWFL", "From Fort Myers to Naples and nearby communities, we help homeowners who've been locked out."),
+            ("Calm, Professional Help", "We'll walk you through next steps when you call and provide a realistic arrival estimate."),
         ],
         "faqs": [
-            ("Is a commercial lockout different from a car lockout?", "The goal is the same — careful vehicle entry. Vehicle type and location details help us prepare."),
-            ("Can you unlock box trucks or vans?", "Often yes depending on the vehicle. Call with details."),
-            ("Do you invoice businesses?", "Call to discuss your needs and service process."),
-            ("What if keys are lost rather than locked inside?", "That's typically a key service — A Good Locksmith handles broader automotive key needs."),
+            ("Can you unlock my front door?", "In many residential lockout situations, yes. Share details when you call."),
+            ("Do I need to prove I live there?", "Be ready to confirm occupancy/ownership as needed for security."),
+            ("Do you also unlock cars?", "Yes — we help with both home and vehicle lockouts."),
+            ("Are you available at night?", "Yes. Emergency residential lockout help is available 24/7."),
         ],
-        "related": ["fleet-vehicle-lockouts", "car-lockouts", "emergency-vehicle-lockout"],
-        "image": "/assets/images/driving.jpg",
+        "related": ["apartment-lockouts", "condo-lockouts", "garage-lockouts", "emergency-residential-lockout"],
+        "image": "/assets/images/home-lockout.jpg",
+    },
+    {
+        "slug": "apartment-lockouts",
+        "category": "residential",
+        "name": "Apartment Lockouts",
+        "short": "Locked out of your apartment? We'll help you get back in.",
+        "eyebrow": "RESIDENTIAL",
+        "h1": "Apartment Lockout Service",
+        "meta_title": "Apartment Lockouts SWFL | Lockout Pro",
+        "meta_desc": "Locked out of your apartment in Southwest Florida? Lockout Pro provides apartment lockout help. Call (239) 380-5240.",
+        "intro": "Apartment lockouts happen — keys left inside, fob issues, or a door that closed behind you. Lockout Pro SWFL helps renters and residents get back inside.",
+        "body": [
+            ("Apartment Living, Real Lockouts", "Call with your building address and unit details so we can find you quickly."),
+            ("Building Access Notes", "If a gate or lobby code is required, have that information ready when we arrive."),
+            ("Friendly Local Help", "Clear communication and a calm process — especially when you're stuck outside with groceries, kids, or work bags."),
+        ],
+        "faqs": [
+            ("Do you work in apartment complexes?", "Yes. Share the community name and address when you call."),
+            ("What if my landlord needs to be notified?", "Follow your lease rules; we're here to help you regain access when appropriate."),
+            ("Can you help if I'm locked out of my car in the lot too?", "Yes — vehicle lockouts are part of what we do."),
+        ],
+        "related": ["home-lockouts", "condo-lockouts", "emergency-residential-lockout"],
+        "image": "/assets/images/apartment.jpg",
+    },
+    {
+        "slug": "condo-lockouts",
+        "category": "residential",
+        "name": "Condo Lockouts",
+        "short": "Locked out of your condo? Local unlock assistance across SWFL.",
+        "eyebrow": "RESIDENTIAL",
+        "h1": "Condo Lockout Service",
+        "meta_title": "Condo Lockouts SWFL | Lockout Pro",
+        "meta_desc": "Locked out of your condo in Southwest Florida? Lockout Pro provides condo lockout assistance. Call (239) 380-5240.",
+        "intro": "Condo lockouts can leave you stuck at the door after a beach day, grocery run, or late night. Lockout Pro SWFL provides local condo lockout help.",
+        "body": [
+            ("Condo Communities Across SWFL", "From coastal buildings to inland communities, call with your address and we'll come to you."),
+            ("Access Details Help", "Gate codes, building names, and parking instructions help us reach you faster."),
+            ("Get Back To Your Evening", "Our goal is simple: help you get inside with clear communication along the way."),
+        ],
+        "faqs": [
+            ("Do you service condo buildings in Naples and Fort Myers Beach?", "Yes — and surrounding Southwest Florida communities."),
+            ("What information should I have ready?", "Address, unit number, and any gate/lobby access details."),
+            ("Are weekend lockouts covered?", "Yes. We're available 24/7 for emergency lockout help."),
+        ],
+        "related": ["apartment-lockouts", "home-lockouts", "garage-lockouts"],
+        "image": "/assets/images/residential.jpg",
+    },
+    {
+        "slug": "garage-lockouts",
+        "category": "residential",
+        "name": "Garage Lockouts",
+        "short": "Locked out of your garage? We'll help restore access.",
+        "eyebrow": "RESIDENTIAL",
+        "h1": "Garage Lockout Service",
+        "meta_title": "Garage Lockouts SWFL | Lockout Pro",
+        "meta_desc": "Locked out of your garage in Southwest Florida? Lockout Pro provides garage lockout help. Call (239) 380-5240.",
+        "intro": "Whether the garage door closed with keys inside or you're locked out of a side/garage entry door, Lockout Pro SWFL can help.",
+        "body": [
+            ("Garage Entry Situations", "Tell us whether you're dealing with a pedestrian door, overhead door scenario, or related access issue so we can prepare."),
+            ("Home Access Matters", "Getting into the garage often means getting back into your day — tools, vehicles, and home access included."),
+            ("Call For Guidance", "Not sure which service you need? Call and describe the situation. We'll point you in the right direction."),
+        ],
+        "faqs": [
+            ("Can you unlock a garage side door?", "In many cases yes. Share details when you call."),
+            ("What if my car is locked in the garage?", "Tell us the full situation — vehicle and garage access details help."),
+            ("Do you help with house lockouts too?", "Yes. Home lockouts are a core service."),
+        ],
+        "related": ["home-lockouts", "car-lockouts", "emergency-residential-lockout"],
+        "image": "/assets/images/home-lockout.jpg",
+    },
+    {
+        "slug": "emergency-residential-lockout",
+        "category": "residential",
+        "name": "Emergency Residential Lockouts",
+        "short": "24/7 home, apartment, and condo lockout assistance.",
+        "eyebrow": "24/7 EMERGENCY",
+        "h1": "Emergency Residential Lockout Service",
+        "meta_title": "Emergency Home Lockouts SWFL | 24/7 | Lockout Pro",
+        "meta_desc": "Emergency residential lockout help in Southwest Florida. Locked out of your home, apartment, or condo? Call (239) 380-5240.",
+        "intro": "Being locked out at night — or with kids, pets, or groceries in tow — is stressful. Lockout Pro SWFL provides emergency residential lockout help across Southwest Florida.",
+        "body": [
+            ("When You Need Help Now", "Call with your address and a brief description of the lockout. We'll provide a realistic arrival estimate."),
+            ("Homes, Apartments, And Condos", "Emergency residential lockout assistance for the places people live across SWFL."),
+            ("Reassuring Process", "Clear communication, professional service, and a focus on getting you back inside."),
+        ],
+        "faqs": [
+            ("Are residential lockouts available 24/7?", "Yes."),
+            ("What areas do you cover?", "Fort Myers, Cape Coral, Naples, Estero, Bonita Springs, and surrounding Southwest Florida communities."),
+            ("Can you also help if my keys are locked in the car?", "Yes — vehicle lockouts are part of what we do."),
+        ],
+        "related": ["home-lockouts", "apartment-lockouts", "emergency-vehicle-lockout"],
+        "image": "/assets/images/residential.jpg",
     },
 ]
 
 SERVICE_BY_SLUG = {s["slug"]: s for s in SERVICES}
+AUTO_SERVICES = [s for s in SERVICES if s["category"] == "automotive"]
+HOME_SERVICES = [s for s in SERVICES if s["category"] == "residential"]
 
-# Old service URLs → redirect targets (keep SEO equity / avoid dead links)
+# Soft redirects for old URLs — helpful, not restrictive
 SERVICE_REDIRECTS = {
-    "lost-car-keys": ("/services/car-lockouts/", "Lost key situations often start as emergencies. Lockout Pro specializes in vehicle lockouts — if your keys are locked inside, call us. For key replacement, see A Good Locksmith."),
-    "car-key-replacement": (AGL + "/services/car-key-replacement/", "Lockout Pro specializes in automotive lockouts. For car key replacement, visit A Good Locksmith."),
-    "key-fob-programming": (AGL + "/services/key-programming/", "Lockout Pro specializes in automotive lockouts. For key fob programming, visit A Good Locksmith."),
-    "smart-keys": (AGL + "/services/automotive-locksmith/", "Lockout Pro specializes in automotive lockouts. For smart key help, visit A Good Locksmith."),
-    "push-to-start-keys": (AGL + "/services/automotive-locksmith/", "Lockout Pro specializes in automotive lockouts. For push-to-start key help, visit A Good Locksmith."),
-    "broken-car-key-extraction": (AGL + "/services/automotive-locksmith/", "Lockout Pro specializes in automotive lockouts. For broken key extraction, visit A Good Locksmith."),
-    "ignition-repair": (AGL + "/services/automotive-locksmith/", "Lockout Pro specializes in automotive lockouts. For ignition help, visit A Good Locksmith."),
-    "duplicate-car-keys": (AGL + "/services/car-key-replacement/", "Lockout Pro specializes in automotive lockouts. For spare/duplicate keys, visit A Good Locksmith."),
-    "motorcycle-keys": (AGL + "/services/automotive-locksmith/", "Lockout Pro specializes in automotive lockouts. For motorcycle keys, visit A Good Locksmith."),
-    "emergency-automotive-locksmith": ("/services/emergency-vehicle-lockout/", "This page has moved to our Emergency Vehicle Lockout service."),
+    "lost-car-keys": (f"{AGL}/services/car-key-replacement/", "Looking for car key help? A Good Locksmith can assist with key replacement. If you're locked out with keys inside, call Lockout Pro."),
+    "car-key-replacement": (f"{AGL}/services/car-key-replacement/", "For car key replacement, visit A Good Locksmith. Locked out? Call Lockout Pro."),
+    "key-fob-programming": (f"{AGL}/services/key-programming/", "For key fob programming, visit A Good Locksmith. Locked out? Call Lockout Pro."),
+    "smart-keys": (f"{AGL}/services/automotive-locksmith/", "For smart key help, visit A Good Locksmith. Locked out? Call Lockout Pro."),
+    "push-to-start-keys": (f"{AGL}/services/automotive-locksmith/", "For push-to-start key help, visit A Good Locksmith. Locked out? Call Lockout Pro."),
+    "broken-car-key-extraction": (f"{AGL}/services/automotive-locksmith/", "For broken key extraction, visit A Good Locksmith. Locked out? Call Lockout Pro."),
+    "ignition-repair": (f"{AGL}/services/automotive-locksmith/", "For ignition assistance, visit A Good Locksmith. Locked out? Call Lockout Pro."),
+    "duplicate-car-keys": (f"{AGL}/services/car-key-replacement/", "For spare keys, visit A Good Locksmith. Locked out? Call Lockout Pro."),
+    "motorcycle-keys": (f"{AGL}/services/automotive-locksmith/", "For motorcycle key help, visit A Good Locksmith. Locked out? Call Lockout Pro."),
+    "emergency-automotive-locksmith": ("/services/emergency-vehicle-lockout/", "This page has moved to Emergency Vehicle Lockouts."),
     "fleet-vehicle-locksmith": ("/services/fleet-vehicle-lockouts/", "This page has moved to Fleet Vehicle Lockouts."),
+    "commercial-vehicle-lockout": ("/services/truck-suv-lockouts/", "Looking for commercial or truck lockout help? See Truck & SUV Lockouts."),
 }
 
 RESOURCES = [
     {
         "slug": "locked-out-of-your-car",
         "title": "Locked Out Of Your Car? Here's What To Do",
-        "eyebrow": "EMERGENCY GUIDE",
-        "meta_desc": "Locked your keys in the car in SWFL? Stay safe, avoid damage, and get professional lockout help fast.",
+        "eyebrow": "VEHICLE GUIDE",
+        "meta_desc": "Locked your keys in the car in SWFL? Stay safe, avoid damage, and get help fast.",
         "minutes": 5,
         "image": "/assets/images/hero-collage.jpg",
-        "intro": "A car lockout rarely happens at a convenient time. The next few minutes matter — the wrong DIY move can damage seals, paint, or linkages. Here's what to do.",
+        "intro": "A car lockout rarely happens at a convenient time. Here's what to do next — stay safe, avoid damage, and get help.",
         "sections": [
-            ("1. Check Safety First", "If a child or pet is inside, call for help immediately and tell the locksmith. Move to a safe place near the vehicle. In heat, prioritize shade and hydration while you wait."),
-            ("2. Confirm It's Actually Locked", "Try every door. Check for a spare. Ask if anyone nearby has a second fob. Don't force anything."),
-            ("3. Avoid DIY Entry Tools", "Coat hangers, knives, and viral unlock hacks commonly damage weatherstripping, wiring, paint, and airbag components."),
-            ("4. Call A Vehicle Lockout Specialist", "Provide your exact location and vehicle year/make/model. Lockout Pro SWFL specializes in automotive lockouts across Southwest Florida."),
-            ("5. After You're Back In", "Consider keeping a properly stored spare key strategy so the next lockout is less likely — and never hide a key on the vehicle in an obvious spot."),
+            ("1. Check Safety First", "If a child or pet is inside, call for help immediately. Move to a safe place near the vehicle."),
+            ("2. Confirm It's Locked", "Try every door and check for a spare before forcing anything."),
+            ("3. Avoid DIY Entry Tools", "Improvised tools commonly damage seals, paint, wiring, or linkages."),
+            ("4. Call For Lockout Help", "Share your location and vehicle year/make/model. Lockout Pro SWFL is ready to help across Southwest Florida."),
+            ("5. After You're Back In", "Consider a spare-key plan so the next lockout is less likely."),
         ],
         "faqs": [
-            ("Can a locksmith unlock my car without damaging it?", "In most lockout situations, yes. Professionals use vehicle-appropriate tools and aim for careful entry."),
-            ("What if my keys are lost, not locked inside?", "That's usually a key replacement situation. Lockout Pro focuses on lockouts; A Good Locksmith can help with keys."),
-            ("Should I try to unlock the car myself?", "If everyone is safe, avoid improvised tools. DIY methods commonly cause expensive damage."),
+            ("Can you unlock my car without damaging it?", "In most lockout situations, professional methods aim for careful entry."),
+            ("Do you also unlock homes?", "Yes — home, apartment, condo, and garage lockouts too."),
+        ],
+    },
+    {
+        "slug": "locked-out-of-your-house",
+        "title": "Locked Out Of Your House? Here's What To Do",
+        "eyebrow": "HOME GUIDE",
+        "meta_desc": "Locked out of your house in SWFL? Practical next steps and when to call for lockout help.",
+        "minutes": 4,
+        "image": "/assets/images/home-lockout.jpg",
+        "intro": "Being locked out of your house is stressful — especially with kids, pets, or Florida heat. Here's a calm plan.",
+        "sections": [
+            ("1. Check Other Entries", "Try side doors, garage access, and whether anyone else has a key."),
+            ("2. Stay Safe", "If it's dark or you're in an unsafe spot, move to a well-lit area and call for help."),
+            ("3. Avoid Forcing The Door", "Prying and improvised tools can damage doors, frames, and locks."),
+            ("4. Call Lockout Pro", "Share your address and a quick description of the lockout. We'll give a realistic arrival estimate."),
+            ("5. After You're Inside", "If keys are frequently misplaced, consider a spare plan with someone you trust."),
+        ],
+        "faqs": [
+            ("Can you unlock apartment and condo doors too?", "Yes — residential lockouts include homes, apartments, and condos."),
+            ("Are you available at night?", "Yes. Emergency residential lockout help is available 24/7."),
         ],
     },
     {
         "slug": "prevent-locking-keys-in-your-car",
         "title": "How To Prevent Locking Keys In Your Car",
         "eyebrow": "PREVENTION",
-        "meta_desc": "Practical habits to stop locking your keys in the car — simple tips for Southwest Florida drivers.",
-        "minutes": 4,
+        "meta_desc": "Simple habits to reduce car lockouts for Southwest Florida drivers.",
+        "minutes": 3,
         "image": "/assets/images/swfl-vehicles.jpg",
-        "intro": "Most lockouts are preventable. A few habits dramatically reduce the odds you'll be standing in a hot parking lot waiting for help.",
+        "intro": "Most car lockouts are preventable. A few habits go a long way.",
         "sections": [
-            ("Keep The Fob In A Fixed Place", "Same pocket or bag pocket every time — especially during grocery runs, beach days, and school pickup."),
-            ("Learn Your Auto-Lock Behavior", "Some vehicles lock automatically. Know your model's behavior so it doesn't lock behind you with keys inside."),
-            ("Have A Spare Strategy", "A working spare kept separately from your daily key is the simplest lockout prevention."),
-            ("Watch Soft-Close Doors", "Distraction plus soft-close doors is a classic lockout recipe. Pause before walking away."),
-            ("Phone Apps Aren't Enough", "Manufacturer apps can help on some newer cars, but connectivity fails. Don't treat an app as your only backup."),
+            ("Keep Keys In A Fixed Place", "Same pocket or bag pocket every time."),
+            ("Learn Auto-Lock Behavior", "Know whether your vehicle locks automatically."),
+            ("Have A Spare Strategy", "A spare kept separately is the simplest prevention."),
+            ("Pause Before Walking Away", "Especially with soft-close doors and busy hands."),
         ],
         "faqs": [
-            ("What's the #1 lockout prevention tip?", "Own a working spare key stored separately from your daily key."),
-            ("Do auto-lock features cause lockouts?", "They can, especially when drivers are unfamiliar with a vehicle."),
-            ("Should I hide a key on the car?", "Magnetic hide-a-keys are risky. A secure spare at home is safer."),
+            ("What's the best prevention tip?", "A working spare stored separately from your daily key."),
         ],
     },
     {
         "slug": "how-much-does-a-car-lockout-cost",
         "title": "How Much Does A Car Lockout Cost?",
-        "eyebrow": "PRICING GUIDE",
-        "meta_desc": "What affects car lockout pricing in SWFL? Learn the factors behind vehicle unlock service costs.",
+        "eyebrow": "PRICING",
+        "meta_desc": "What affects car lockout pricing in Southwest Florida.",
         "minutes": 4,
         "image": "/assets/images/automotive-work.jpg",
-        "intro": "Car lockout pricing isn't one flat number — vehicle type, location, time of day, and complexity all matter. Here's what Southwest Florida drivers should know.",
+        "intro": "Lockout pricing isn't one flat number — vehicle type, location, timing, and complexity all matter.",
         "sections": [
-            ("Vehicle Details Matter", "Modern vehicles have different lock designs and security systems. Year, make, and model help a lockout specialist prepare — and quote more accurately."),
-            ("Location And Timing", "After-hours emergencies and farther locations can affect response. Clear communication when you call helps set expectations."),
-            ("Complexity Of The Lockout", "A straightforward cabin lockout differs from certain trunk situations or vehicles with unique entry considerations."),
-            ("Beware Of Too-Good Quotes", "Be wary of prices that sound impossibly low without asking for vehicle details. Provide accurate information and ask for a clear estimate."),
-            ("The Cost Of DIY Damage", "A cheap pry attempt that breaks a seal or linkage often costs more than calling a professional lockout service."),
+            ("Vehicle Details Matter", "Year, make, and model help with preparation and clearer estimates."),
+            ("Location And Timing", "After-hours and farther locations can affect response."),
+            ("Complexity", "A straightforward cabin lockout can differ from certain trunk situations."),
+            ("Ask For Clarity", "Provide accurate details and ask for a clear estimate when you call."),
         ],
         "faqs": [
-            ("Why won't anyone give an exact price by text?", "Because vehicles vary. Accurate estimates need year, make, model, and lockout details."),
-            ("Is the cheapest quote the best deal?", "Not if it leads to damage or bait-and-switch pricing."),
-            ("Does Lockout Pro replace keys too?", "Lockout Pro specializes in lockouts. For key replacement and programming, see A Good Locksmith."),
+            ("Why can't I get an exact price by text?", "Vehicles and situations vary. Details help."),
         ],
     },
     {
         "slug": "locked-out-engine-running",
         "title": "Locked Out With The Engine Running?",
-        "eyebrow": "URGENT LOCKOUT",
-        "meta_desc": "Locked out of a running car in SWFL? What to do next and when to call Lockout Pro immediately.",
+        "eyebrow": "URGENT",
+        "meta_desc": "Locked out of a running car in SWFL? What to do next.",
         "minutes": 3,
         "image": "/assets/images/hero-collage.jpg",
-        "intro": "A running vehicle with keys inside raises the stakes — heat, safety, and the risk of the car being left unattended. Stay calm and call for professional lockout help.",
+        "intro": "A running vehicle with keys inside raises the stakes. Stay calm and call for help.",
         "sections": [
-            ("Call Immediately", "Tell the lockout specialist the engine is running and share your exact location plus vehicle details."),
+            ("Call Immediately", "Tell us the engine is running and share your location plus vehicle details."),
             ("Stay With The Vehicle If Safe", "Don't leave a running vehicle unattended if you can safely remain nearby."),
-            ("Kids Or Pets Inside", "Say so immediately when you call so responders can prioritize."),
-            ("Don't Smash A Window First", "Window breakage is a last resort and creates injury and cost risk. Professional entry is usually the better first call."),
-            ("After You're Back In", "Once secure, consider how the lockout happened and put a spare-key plan in place."),
+            ("Kids Or Pets Inside", "Say so immediately when you call."),
+            ("Avoid Breaking A Window First", "Professional entry is usually the better first call."),
         ],
         "faqs": [
-            ("Is a running-car lockout more urgent?", "Yes — especially with occupants inside or in extreme heat."),
-            ("Can you unlock a car while it's running?", "In many cases yes. Tell us the situation when you call."),
-            ("Should I call 911?", "If someone is in immediate danger, call emergency services first, then call for lockout help."),
+            ("Is this more urgent?", "Yes — especially with occupants inside or extreme heat."),
         ],
     },
 ]
 
 RESOURCE_REDIRECTS = {
-    "lost-car-keys-guide": ("/resources/locked-out-of-your-car/", "Looking for lockout help? Start here. For key replacement, visit A Good Locksmith."),
-    "how-much-does-a-car-locksmith-cost": ("/resources/how-much-does-a-car-lockout-cost/", "Updated guide focused on car lockout pricing."),
-    "key-fob-stopped-working": (AGL + "/", "Lockout Pro specializes in lockouts. For key fob issues, visit A Good Locksmith."),
-    "can-a-locksmith-replace-push-to-start-keys": (AGL + "/", "Lockout Pro specializes in lockouts. For push-to-start keys, visit A Good Locksmith."),
-    "signs-ignition-cylinder-failing": (AGL + "/", "Lockout Pro specializes in lockouts. For ignition issues, visit A Good Locksmith."),
-    "spare-car-keys-every-driver": (AGL + "/services/car-key-replacement/", "For spare car keys, visit A Good Locksmith. For lockouts, call Lockout Pro."),
+    "lost-car-keys-guide": ("/resources/locked-out-of-your-car/", "Looking for lockout help? Start with our car lockout guide."),
+    "how-much-does-a-car-locksmith-cost": ("/resources/how-much-does-a-car-lockout-cost/", "Updated guide focused on lockout pricing."),
+    "key-fob-stopped-working": (AGL + "/", "For key fob help, visit A Good Locksmith. Locked out? Call Lockout Pro."),
+    "can-a-locksmith-replace-push-to-start-keys": (AGL + "/", "For push-to-start keys, visit A Good Locksmith. Locked out? Call Lockout Pro."),
+    "signs-ignition-cylinder-failing": (AGL + "/", "For ignition concerns, visit A Good Locksmith. Locked out? Call Lockout Pro."),
+    "spare-car-keys-every-driver": (f"{AGL}/services/car-key-replacement/", "For spare keys, visit A Good Locksmith. Locked out? Call Lockout Pro."),
 }
 
 
 def esc(s: str) -> str:
-    return (
-        s.replace("&", "&amp;")
-        .replace("<", "&lt;")
-        .replace(">", "&gt;")
-        .replace('"', "&quot;")
-    )
+    return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
 
 
 def write(path: Path, content: str):
@@ -317,12 +443,9 @@ def header(active: str = "") -> str:
 
 
 def footer() -> str:
-    service_links = "\n".join(
-        f'<li><a href="/services/{s["slug"]}/">{esc(s["name"])}</a></li>' for s in SERVICES
-    )
-    area_links = "\n".join(
-        f'<li><a href="/locations/{a["slug"]}/">{esc(a["name"])}</a></li>' for a in AREAS[:6]
-    )
+    auto_links = "\n".join(f'<li><a href="/services/{s["slug"]}/">{esc(s["name"])}</a></li>' for s in AUTO_SERVICES[:5])
+    home_links = "\n".join(f'<li><a href="/services/{s["slug"]}/">{esc(s["name"])}</a></li>' for s in HOME_SERVICES[:5])
+    area_links = "\n".join(f'<li><a href="/locations/{a["slug"]}/">{esc(a["name"])}</a></li>' for a in AREAS[:6])
     return f'''<footer class="site-footer" id="contact">
   <div class="container footer-grid">
     <div class="footer-brand">
@@ -330,36 +453,38 @@ def footer() -> str:
         <img src="/LOGO.png" alt="{BRAND}" width="56" height="56">
         <span class="brand-name"><span class="brand-lockout">LOCKOUT</span> <span class="brand-pro">PRO</span> <span class="brand-swfl">SWFL</span></span>
       </a>
-      <p>Southwest Florida's automotive lockout specialist. Locked out of your vehicle? Call us.</p>
+      <p>Locked out? Lockout Pro SWFL helps with vehicle and home lockouts across Southwest Florida.</p>
       <a class="footer-phone" href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a>
-      <p class="footer-hours">Available 24/7 · Vehicle Lockouts</p>
+      <p class="footer-hours">Available 24/7</p>
     </div>
     <div>
-      <h3>Lockout Services</h3>
-      <ul>{service_links}</ul>
+      <h3>Vehicle Lockouts</h3>
+      <ul>{auto_links}</ul>
     </div>
     <div>
-      <h3>Service Areas</h3>
+      <h3>Home Lockouts</h3>
+      <ul>{home_links}</ul>
+      <h3 class="footer-spaced">Areas</h3>
       <ul>{area_links}
         <li><a href="/locations/">All Areas →</a></li>
       </ul>
     </div>
     <div>
-      <h3>Need Keys Or Home Locks?</h3>
-      <p>For key replacement, fobs, ignition work, or residential/commercial locksmith service:</p>
+      <h3>More Locksmith Help</h3>
+      <p>Need rekeying, lock installation, or key replacement?</p>
       <a class="footer-outlink" href="{AGL}" rel="noopener noreferrer" target="_blank">Visit A Good Locksmith →</a>
       <h3 class="footer-spaced">Resources</h3>
       <ul>
         <li><a href="/resources/">Resource Center</a></li>
-        <li><a href="/resources/locked-out-of-your-car/">Locked Out Guide</a></li>
-        <li><a href="/resources/how-much-does-a-car-lockout-cost/">Lockout Pricing</a></li>
+        <li><a href="/resources/locked-out-of-your-car/">Car Lockout Guide</a></li>
+        <li><a href="/resources/locked-out-of-your-house/">Home Lockout Guide</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
     <div class="container footer-bottom-inner">
       <p>© {date.today().year} {BRAND}. All rights reserved.</p>
-      <p>Automotive lockouts · Southwest Florida</p>
+      <p>Southwest Florida</p>
     </div>
   </div>
 </footer>
@@ -374,11 +499,7 @@ def head(title, description, canonical, og_image=f"{DOMAIN}/assets/images/hero-c
     schema_html = ""
     if schemas:
         for schema in schemas:
-            schema_html += (
-                '\n<script type="application/ld+json">\n'
-                + json.dumps(schema, indent=2)
-                + "\n</script>"
-            )
+            schema_html += '\n<script type="application/ld+json">\n' + json.dumps(schema, indent=2) + "\n</script>"
     og_type = "article" if article else "website"
     return f'''<!DOCTYPE html>
 <html lang="en">
@@ -413,8 +534,7 @@ def head(title, description, canonical, og_image=f"{DOMAIN}/assets/images/hero-c
 
 
 def breadcrumbs(items):
-    lis = []
-    schema_items = []
+    lis, schema_items = [], []
     for i, (name, href) in enumerate(items, 1):
         if href:
             lis.append(f'<li><a href="{href}">{esc(name)}</a></li>')
@@ -422,39 +542,35 @@ def breadcrumbs(items):
         else:
             lis.append(f'<li aria-current="page"><span>{esc(name)}</span></li>')
             schema_items.append({"@type": "ListItem", "position": i, "name": name})
-    nav = f'''<div class="container breadcrumb-wrap">
-<nav class="breadcrumbs" aria-label="Breadcrumb"><ol>{"".join(lis)}</ol></nav>
-</div>'''
-    schema = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": schema_items}
-    return nav, schema
+    nav = f'''<div class="container breadcrumb-wrap"><nav class="breadcrumbs" aria-label="Breadcrumb"><ol>{"".join(lis)}</ol></nav></div>'''
+    return nav, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": schema_items}
 
 
-def sidebar(current_service=None):
-    links = "\n".join(
-        '<li><a href="/services/{slug}/"{cls}>{name}</a></li>'.format(
-            slug=s["slug"],
-            cls=' class="current"' if current_service == s["slug"] else "",
-            name=esc(s["name"]),
-        )
-        for s in SERVICES
+def sidebar(current=None):
+    auto = "\n".join(
+        '<li><a href="/services/{s}/"{c}>{n}</a></li>'.format(
+            s=x["slug"], c=' class="current"' if current == x["slug"] else "", n=esc(x["name"])
+        ) for x in AUTO_SERVICES
     )
-    areas = "\n".join(
-        f'<li><a href="/locations/{a["slug"]}/">{esc(a["name"])}</a></li>' for a in AREAS[:8]
+    home = "\n".join(
+        '<li><a href="/services/{s}/"{c}>{n}</a></li>'.format(
+            s=x["slug"], c=' class="current"' if current == x["slug"] else "", n=esc(x["name"])
+        ) for x in HOME_SERVICES
     )
     return f'''<aside class="page-sidebar">
   <div class="sidebar-card sidebar-cta">
     <p class="sidebar-kicker">Locked Out?</p>
     <a class="sidebar-phone" href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a>
     <a class="btn btn-primary btn-block" href="tel:{PHONE_TEL}">Call Now</a>
-    <p class="sidebar-note">24/7 vehicle lockout service</p>
+    <p class="sidebar-note">24/7 lockout help across SWFL</p>
   </div>
   <div class="sidebar-card">
-    <h3>Lockout Services</h3>
-    <ul class="sidebar-links">{links}</ul>
+    <h3>Vehicle</h3>
+    <ul class="sidebar-links">{auto}</ul>
   </div>
   <div class="sidebar-card">
-    <h3>Areas</h3>
-    <ul class="sidebar-links">{areas}</ul>
+    <h3>Home</h3>
+    <ul class="sidebar-links">{home}</ul>
   </div>
 </aside>'''
 
@@ -463,19 +579,13 @@ def faq_schema(faqs):
     return {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        "mainEntity": [
-            {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}}
-            for q, a in faqs
-        ],
+        "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faqs],
     }
 
 
 def faq_html(faqs):
     return "\n".join(
-        f'''<details class="faq-item">
-  <summary>{esc(q)}</summary>
-  <div class="faq-answer"><p>{esc(a)}</p></div>
-</details>'''
+        f'''<details class="faq-item"><summary>{esc(q)}</summary><div class="faq-answer"><p>{esc(a)}</p></div></details>'''
         for q, a in faqs
     )
 
@@ -490,7 +600,7 @@ def org_schema():
         "image": DOMAIN + "/assets/images/hero-collage.jpg",
         "telephone": PHONE_SCHEMA,
         "priceRange": "$$",
-        "description": "24/7 automotive lockout specialist serving Southwest Florida. Car lockouts, emergency vehicle lockouts, trunk lockouts, and fleet lockout service.",
+        "description": "24/7 lockout help across Southwest Florida — vehicle lockouts and home lockouts for cars, trucks, SUVs, houses, apartments, condos, and garages.",
         "areaServed": [a["name"] for a in AREAS] + ["Southwest Florida"],
         "serviceType": [s["name"] for s in SERVICES],
         "openingHoursSpecification": {
@@ -504,7 +614,7 @@ def org_schema():
 
 def redirect_page(title, message, target, canonical):
     external = target.startswith("http")
-    return f'''{head(title, message, canonical, schemas=None)}
+    return f'''{head(title, message, canonical)}
 <body class="inner-page">
 <a class="skip-link" href="#main">Skip to content</a>
 {header("services")}
@@ -522,66 +632,62 @@ def redirect_page(title, message, target, canonical):
   </div>
 </section>
 <meta http-equiv="refresh" content="8;url={target}">
-<section class="section">
-  <div class="container" style="max-width:720px">
-    <div class="content-block">
-      <p>Lockout Pro SWFL is Southwest Florida's automotive <strong>lockout</strong> specialist. If your keys are locked inside your vehicle, call <a href="tel:{PHONE_TEL}"><strong>{PHONE_DISPLAY}</strong></a>.</p>
-      <p style="margin-top:1rem"><a class="btn btn-primary" href="{target}"{" rel=\"noopener noreferrer\" target=\"_blank\"" if external else ""}>Go to the right page</a></p>
-    </div>
-  </div>
-</section>
+<section class="section"><div class="container" style="max-width:720px"><div class="content-block">
+<p>Locked out of your vehicle or home? Call <a href="tel:{PHONE_TEL}"><strong>{PHONE_DISPLAY}</strong></a>.</p>
+<p style="margin-top:1rem"><a class="btn btn-primary" href="{target}"{" rel=\"noopener noreferrer\" target=\"_blank\"" if external else ""}>Go to the right page</a></p>
+</div></div></section>
 {footer()}
-</body>
-</html>'''
+</body></html>'''
 
 
 def build_service_pages():
-    cards = "\n".join(
-        f'''<a class="service-tile" href="/services/{s["slug"]}/">
+    def cards(items):
+        return "\n".join(
+            f'''<a class="service-tile" href="/services/{s["slug"]}/">
   <span class="service-tile-eyebrow">{esc(s["eyebrow"])}</span>
   <h2>{esc(s["name"])}</h2>
   <p>{esc(s["short"])}</p>
-  <span class="service-tile-link">View service →</span>
-</a>'''
-        for s in SERVICES
-    )
+  <span class="service-tile-link">Learn more →</span>
+</a>''' for s in items
+        )
+
     crumb_nav, crumb_schema = breadcrumbs([("Home", "/"), ("Services", None)])
     html = f'''{head(
-        f"Vehicle Lockout Services | {BRAND}",
-        "Lockout Pro SWFL lockout services: car lockouts, emergency vehicle lockouts, trunk lockouts, fleet and commercial vehicle lockouts across Southwest Florida.",
+        f"Lockout Services | Vehicle & Home | {BRAND}",
+        "Lockout Pro SWFL lockout services for cars, trucks, SUVs, homes, apartments, condos, and garages across Southwest Florida.",
         f"{DOMAIN}/services/",
         schemas=[org_schema(), crumb_schema],
     )}
 <body class="inner-page">
 <a class="skip-link" href="#main">Skip to content</a>
 {header("services")}
-<section class="page-hero page-hero-services" id="main">
+<section class="page-hero" id="main">
   <div class="page-hero-media" style="background-image:url('/assets/images/hero-collage.jpg')"></div>
   <div class="page-hero-veil"></div>
   <div class="container page-hero-content">
-    <p class="eyebrow">AUTOMOTIVE LOCKOUTS</p>
-    <h1>Vehicle Lockout Services</h1>
-    <p class="page-hero-lead">One specialty: getting you back into your vehicle across Southwest Florida.</p>
+    <p class="eyebrow">LOCKOUT SERVICES</p>
+    <h1>Vehicle &amp; Home Lockouts</h1>
+    <p class="page-hero-lead">Fast local help when you're locked out across Southwest Florida.</p>
     <a class="btn btn-primary" href="tel:{PHONE_TEL}">Call {PHONE_DISPLAY}</a>
   </div>
 </section>
 {crumb_nav}
 <section class="section">
-  <div class="container service-tile-grid">{cards}</div>
+  <div class="container">
+    <div class="section-head"><p class="eyebrow">AUTOMOTIVE</p><h2>Vehicle Lockouts</h2></div>
+    <div class="service-tile-grid">{cards(AUTO_SERVICES)}</div>
+    <div class="section-head" style="margin-top:3rem"><p class="eyebrow">RESIDENTIAL</p><h2>Home Lockouts</h2></div>
+    <div class="service-tile-grid">{cards(HOME_SERVICES)}</div>
+  </div>
 </section>
 <section class="roadside-cta">
   <div class="container roadside-cta-inner">
-    <div>
-      <p class="eyebrow">LOCKED OUT RIGHT NOW?</p>
-      <h2>Call Lockout Pro SWFL</h2>
-      <p>Vehicle lockout specialists serving Southwest Florida.</p>
-    </div>
+    <div><p class="eyebrow">NEED HELP NOW?</p><h2>Locked Out? We're On The Way.</h2></div>
     <a class="btn btn-primary btn-xl" href="tel:{PHONE_TEL}">CALL NOW {PHONE_DISPLAY}</a>
   </div>
 </section>
 {footer()}
-</body>
-</html>'''
+</body></html>'''
     write(ROOT / "services" / "index.html", html)
 
     for s in SERVICES:
@@ -589,25 +695,17 @@ def build_service_pages():
             f'<li><a href="/services/{slug}/">{esc(SERVICE_BY_SLUG[slug]["name"])}</a></li>'
             for slug in s["related"] if slug in SERVICE_BY_SLUG
         )
-        body_sections = "".join(
-            f'<section class="content-block"><h2>{esc(h)}</h2><p>{esc(p)}</p></section>'
-            for h, p in s["body"]
-        )
-        area_links = ", ".join(
-            f'<a href="/locations/{a["slug"]}/">{esc(a["name"])}</a>' for a in AREAS[:6]
-        )
+        body = "".join(f'<section class="content-block"><h2>{esc(h)}</h2><p>{esc(p)}</p></section>' for h, p in s["body"])
+        areas = ", ".join(f'<a href="/locations/{a["slug"]}/">{esc(a["name"])}</a>' for a in AREAS[:6])
         crumb_nav, crumb_schema = breadcrumbs([("Home", "/"), ("Services", "/services/"), (s["name"], None)])
         service_schema = {
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": s["name"],
-            "serviceType": s["name"],
-            "description": s["meta_desc"],
+            "@context": "https://schema.org", "@type": "Service",
+            "name": s["name"], "serviceType": s["name"], "description": s["meta_desc"],
             "url": f"{DOMAIN}/services/{s['slug']}/",
             "provider": {"@type": "Locksmith", "name": BRAND, "telephone": PHONE_SCHEMA, "url": DOMAIN + "/"},
             "areaServed": [a["name"] for a in AREAS],
         }
-        html = f'''{head(s["meta_title"], s["meta_desc"], f"{DOMAIN}/services/{s['slug']}/", og_image=DOMAIN + s["image"], schemas=[service_schema, crumb_schema, faq_schema(s["faqs"])])}
+        html = f'''{head(s["meta_title"], s["meta_desc"], f"{DOMAIN}/services/{s['slug']}/", DOMAIN + s["image"], [service_schema, crumb_schema, faq_schema(s["faqs"])])}
 <body class="inner-page">
 <a class="skip-link" href="#main">Skip to content</a>
 {header("services")}
@@ -620,7 +718,7 @@ def build_service_pages():
     <p class="page-hero-lead">{esc(s["short"])}</p>
     <div class="hero-actions">
       <a class="btn btn-primary" href="tel:{PHONE_TEL}">Call {PHONE_DISPLAY}</a>
-      <a class="btn btn-ghost" href="/services/">All Lockout Services</a>
+      <a class="btn btn-ghost" href="/services/">All Services</a>
     </div>
   </div>
 </section>
@@ -630,41 +728,27 @@ def build_service_pages():
     <div class="page-main">
       <div class="content-block intro-block">
         <p>{esc(s["intro"])}</p>
-        <p>Serving drivers in {area_links}, and surrounding communities. Call <strong>{PHONE_DISPLAY}</strong>.</p>
+        <p>Serving {areas}, and nearby communities. Call <strong>{PHONE_DISPLAY}</strong>.</p>
       </div>
-      {body_sections}
-      <section class="content-block">
-        <h2>Related Lockout Services</h2>
-        <ul class="text-list">{related}</ul>
-      </section>
-      <section class="content-block">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-list">{faq_html(s["faqs"])}</div>
-      </section>
+      {body}
+      <section class="content-block"><h2>Related Services</h2><ul class="text-list">{related}</ul></section>
+      <section class="content-block"><h2>FAQ</h2><div class="faq-list">{faq_html(s["faqs"])}</div></section>
     </div>
     {sidebar(s["slug"])}
   </div>
 </section>
 <section class="roadside-cta">
   <div class="container roadside-cta-inner">
-    <div>
-      <p class="eyebrow">NEED THIS SERVICE NOW?</p>
-      <h2>Call Lockout Pro SWFL</h2>
-    </div>
+    <div><p class="eyebrow">READY FOR HELP?</p><h2>Call Lockout Pro SWFL</h2></div>
     <a class="btn btn-primary btn-xl" href="tel:{PHONE_TEL}">CALL {PHONE_DISPLAY}</a>
   </div>
 </section>
 {footer()}
-</body>
-</html>'''
+</body></html>'''
         write(ROOT / "services" / s["slug"] / "index.html", html)
 
-    for old_slug, (target, msg) in SERVICE_REDIRECTS.items():
-        title = old_slug.replace("-", " ").title()
-        write(
-            ROOT / "services" / old_slug / "index.html",
-            redirect_page(title, msg, target, f"{DOMAIN}/services/{old_slug}/"),
-        )
+    for old, (target, msg) in SERVICE_REDIRECTS.items():
+        write(ROOT / "services" / old / "index.html", redirect_page(old.replace("-", " ").title(), msg, target, f"{DOMAIN}/services/{old}/"))
 
 
 def build_location_pages():
@@ -672,71 +756,56 @@ def build_location_pages():
         f'''<a class="area-tile" href="/locations/{a["slug"]}/">
   <span class="area-tile-county">{esc(a["county"])}</span>
   <h2>{esc(a["name"])}</h2>
-  <p>Vehicle lockout service in {esc(a["name"])}.</p>
+  <p>Vehicle and home lockout help in {esc(a["name"])}.</p>
   <span class="service-tile-link">View area →</span>
-</a>'''
-        for a in AREAS
+</a>''' for a in AREAS
     )
     crumb_nav, crumb_schema = breadcrumbs([("Home", "/"), ("Service Areas", None)])
-    html = f'''{head(
-        f"Service Areas | Vehicle Lockouts Across SWFL | {BRAND}",
-        "Lockout Pro SWFL serves Fort Myers, Cape Coral, Naples, Bonita Springs, Estero, and more with 24/7 vehicle lockout service.",
-        f"{DOMAIN}/locations/",
-        schemas=[org_schema(), crumb_schema],
+    write(ROOT / "locations" / "index.html", f'''{head(
+        f"Service Areas | Lockouts Across SWFL | {BRAND}",
+        "Lockout Pro SWFL serves Fort Myers, Cape Coral, Naples, Bonita Springs, Estero and more with vehicle and home lockout help.",
+        f"{DOMAIN}/locations/", schemas=[org_schema(), crumb_schema],
     )}
 <body class="inner-page">
 <a class="skip-link" href="#main">Skip to content</a>
 {header("locations")}
-<section class="page-hero page-hero-areas" id="main">
-  <div class="page-hero-media" style="background-image:url('/assets/images/swfl-vehicles.jpg')"></div>
+<section class="page-hero" id="main">
+  <div class="page-hero-media" style="background-image:url('/assets/images/residential.jpg')"></div>
   <div class="page-hero-veil"></div>
   <div class="container page-hero-content">
     <p class="eyebrow">SOUTHWEST FLORIDA</p>
-    <h1>Lockout Service Areas</h1>
-    <p class="page-hero-lead">Mobile vehicle lockout coverage across Lee and Collier County communities.</p>
+    <h1>Areas We Serve</h1>
+    <p class="page-hero-lead">Local lockout help across Lee and Collier County communities.</p>
     <a class="btn btn-primary" href="tel:{PHONE_TEL}">Call {PHONE_DISPLAY}</a>
   </div>
 </section>
 {crumb_nav}
-<section class="section">
-  <div class="container area-tile-grid">{cards}</div>
-</section>
+<section class="section"><div class="container area-tile-grid">{cards}</div></section>
 {footer()}
-</body>
-</html>'''
-    write(ROOT / "locations" / "index.html", html)
+</body></html>''')
 
     for a in AREAS:
-        service_links = "".join(
-            f'<li><a href="/services/{s["slug"]}/">{esc(s["name"])} in {esc(a["name"])}</a></li>'
-            for s in SERVICES
-        )
-        other_areas = "".join(
-            f'<li><a href="/locations/{o["slug"]}/">{esc(o["name"])}</a></li>'
-            for o in AREAS if o["slug"] != a["slug"]
-        )
+        auto = "".join(f'<li><a href="/services/{s["slug"]}/">{esc(s["name"])}</a></li>' for s in AUTO_SERVICES[:5])
+        home = "".join(f'<li><a href="/services/{s["slug"]}/">{esc(s["name"])}</a></li>' for s in HOME_SERVICES[:5])
+        others = "".join(f'<li><a href="/locations/{o["slug"]}/">{esc(o["name"])}</a></li>' for o in AREAS if o["slug"] != a["slug"])
         crumb_nav, crumb_schema = breadcrumbs([("Home", "/"), ("Service Areas", "/locations/"), (a["name"], None)])
-        local_schema = {
-            "@context": "https://schema.org",
-            "@type": "Locksmith",
-            "name": f"{BRAND} — {a['name']}",
-            "url": f"{DOMAIN}/locations/{a['slug']}/",
-            "telephone": PHONE_SCHEMA,
-            "areaServed": a["name"],
-            "description": f"24/7 vehicle lockout service in {a['name']}, {a['county']}, Florida.",
+        faqs = [
+            (f"Do you unlock cars in {a['name']}?", f"Yes. We provide vehicle lockout help throughout {a['name']} and nearby {a['county']} communities."),
+            (f"Can you help if I'm locked out of my house in {a['name']}?", f"Yes — home, apartment, condo, and garage lockouts in {a['name']}."),
+            ("How fast can you arrive?", "Arrival time depends on your exact location and current calls. We'll give a realistic estimate when you call."),
+            ("Are you available 24/7?", "Yes."),
+        ]
+        local = {
+            "@context": "https://schema.org", "@type": "Locksmith",
+            "name": f"{BRAND} — {a['name']}", "url": f"{DOMAIN}/locations/{a['slug']}/",
+            "telephone": PHONE_SCHEMA, "areaServed": a["name"],
+            "description": f"Vehicle and home lockout help in {a['name']}, {a['county']}, Florida.",
             "parentOrganization": {"@type": "Locksmith", "name": BRAND, "url": DOMAIN + "/"},
         }
-        faqs = [
-            (f"Do you provide car lockouts in {a['name']}?", f"Yes. Lockout Pro SWFL provides mobile car lockout service throughout {a['name']} and nearby {a['county']} communities."),
-            (f"How fast can you reach {a['name']}?", "Arrival time depends on your exact location and current call volume. We'll give a realistic estimate when you call."),
-            ("Do you replace car keys too?", "Lockout Pro specializes in lockouts. For key replacement and programming, visit A Good Locksmith."),
-            ("Are you available 24/7?", "Yes — emergency vehicle lockout service around the clock across our SWFL area."),
-        ]
-        html = f'''{head(
-            f"Car Lockouts in {a['name']} FL | {BRAND}",
-            f"Locked out in {a['name']}? Lockout Pro SWFL provides 24/7 vehicle lockout service. Call {PHONE_DISPLAY}.",
-            f"{DOMAIN}/locations/{a['slug']}/",
-            schemas=[local_schema, crumb_schema, faq_schema(faqs)],
+        write(ROOT / "locations" / a["slug"] / "index.html", f'''{head(
+            f"Lockouts in {a['name']} FL | Car & Home | {BRAND}",
+            f"Locked out in {a['name']}? Lockout Pro SWFL helps with car lockouts and home lockouts. Call {PHONE_DISPLAY}.",
+            f"{DOMAIN}/locations/{a['slug']}/", schemas=[local, crumb_schema, faq_schema(faqs)],
         )}
 <body class="inner-page">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -746,11 +815,11 @@ def build_location_pages():
   <div class="page-hero-veil"></div>
   <div class="container page-hero-content">
     <p class="eyebrow">{esc(a["county"]).upper()}</p>
-    <h1>Car Lockouts in {esc(a["name"])}</h1>
-    <p class="page-hero-lead">Locked out of your vehicle in {esc(a["name"])}? Call Lockout Pro SWFL.</p>
+    <h1>Lockouts in {esc(a["name"])}</h1>
+    <p class="page-hero-lead">Vehicle and home lockout help for {esc(a["name"])} residents and drivers.</p>
     <div class="hero-actions">
       <a class="btn btn-primary" href="tel:{PHONE_TEL}">Call {PHONE_DISPLAY}</a>
-      <a class="btn btn-ghost" href="/services/car-lockouts/">Car Lockouts</a>
+      <a class="btn btn-ghost" href="/services/">View Services</a>
     </div>
   </div>
 </section>
@@ -759,47 +828,25 @@ def build_location_pages():
   <div class="container page-layout-grid">
     <div class="page-main">
       <div class="content-block intro-block">
-        <p>When you're locked out in <strong>{esc(a["name"])}</strong>, you need a specialist who comes to you. Lockout Pro SWFL is focused on vehicle lockouts throughout {esc(a["county"])}.</p>
-        <p>Call <strong>{PHONE_DISPLAY}</strong>. Have your vehicle year, make, and model ready.</p>
+        <p>Locked out in <strong>{esc(a["name"])}</strong>? Lockout Pro SWFL is here to help — whether you're outside your car or outside your front door.</p>
+        <p>Call <strong>{PHONE_DISPLAY}</strong> and we'll get you moving in the right direction.</p>
       </div>
-      <section class="content-block">
-        <h2>Lockout Services in {esc(a["name"])}</h2>
-        <ul class="text-list">{service_links}</ul>
-      </section>
-      <section class="content-block">
-        <h2>Why Drivers in {esc(a["name"])} Call Us</h2>
-        <ul class="check-list">
-          <li>Focused on vehicle lockouts — not a general locksmith catch-all</li>
-          <li>24/7 emergency lockout response</li>
-          <li>Mobile service to your location</li>
-          <li>Local Southwest Florida coverage</li>
-        </ul>
-      </section>
-      <section class="content-block">
-        <h2>Nearby Areas</h2>
-        <ul class="text-list">{other_areas}</ul>
-      </section>
-      <section class="content-block">
-        <h2>{esc(a["name"])} FAQ</h2>
-        <div class="faq-list">{faq_html(faqs)}</div>
-      </section>
+      <section class="content-block"><h2>Vehicle Lockouts in {esc(a["name"])}</h2><ul class="text-list">{auto}</ul></section>
+      <section class="content-block"><h2>Home Lockouts in {esc(a["name"])}</h2><ul class="text-list">{home}</ul></section>
+      <section class="content-block"><h2>Nearby Areas</h2><ul class="text-list">{others}</ul></section>
+      <section class="content-block"><h2>FAQ</h2><div class="faq-list">{faq_html(faqs)}</div></section>
     </div>
     {sidebar()}
   </div>
 </section>
 <section class="roadside-cta">
   <div class="container roadside-cta-inner">
-    <div>
-      <p class="eyebrow">{esc(a["name"]).upper()} LOCKOUT</p>
-      <h2>Locked Out in {esc(a["name"])}?</h2>
-    </div>
+    <div><p class="eyebrow">{esc(a["name"]).upper()}</p><h2>Locked Out in {esc(a["name"])}?</h2></div>
     <a class="btn btn-primary btn-xl" href="tel:{PHONE_TEL}">CALL {PHONE_DISPLAY}</a>
   </div>
 </section>
 {footer()}
-</body>
-</html>'''
-        write(ROOT / "locations" / a["slug"] / "index.html", html)
+</body></html>''')
 
 
 def build_resource_pages():
@@ -812,34 +859,20 @@ def build_resource_pages():
     <p>{esc(r["meta_desc"])}</p>
     <span class="service-tile-link">{r["minutes"]} min read →</span>
   </div>
-</a>'''
-        for r in RESOURCES
+</a>''' for r in RESOURCES
     )
     crumb_nav, crumb_schema = breadcrumbs([("Home", "/"), ("Resource Center", None)])
     item_list = {
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "name": "Resource Center",
+        "@context": "https://schema.org", "@type": "ItemList", "name": "Resource Center",
         "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": i,
-                "item": {
-                    "@type": "BlogPosting",
-                    "headline": r["title"],
-                    "url": f"{DOMAIN}/resources/{r['slug']}/",
-                    "description": r["meta_desc"],
-                    "author": {"@type": "Organization", "name": BRAND},
-                },
-            }
+            {"@type": "ListItem", "position": i, "item": {"@type": "BlogPosting", "headline": r["title"], "url": f"{DOMAIN}/resources/{r['slug']}/", "description": r["meta_desc"], "author": {"@type": "Organization", "name": BRAND}}}
             for i, r in enumerate(RESOURCES, 1)
         ],
     }
-    html = f'''{head(
-        f"Resource Center | Vehicle Lockout Guides | {BRAND}",
-        "Practical vehicle lockout guides for Southwest Florida drivers.",
-        f"{DOMAIN}/resources/",
-        schemas=[item_list, crumb_schema],
+    write(ROOT / "resources" / "index.html", f'''{head(
+        f"Resource Center | Lockout Guides | {BRAND}",
+        "Helpful guides for vehicle and home lockouts in Southwest Florida.",
+        f"{DOMAIN}/resources/", schemas=[item_list, crumb_schema],
     )}
 <body class="inner-page">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -850,45 +883,27 @@ def build_resource_pages():
   <div class="container page-hero-content">
     <p class="eyebrow">RESOURCE CENTER</p>
     <h1>Lockout Guides</h1>
-    <p class="page-hero-lead">Clear answers for vehicle lockouts — written for Southwest Florida drivers.</p>
+    <p class="page-hero-lead">Practical tips for vehicle and home lockouts.</p>
   </div>
 </section>
 {crumb_nav}
-<section class="section">
-  <div class="container resource-grid">{cards}</div>
-</section>
+<section class="section"><div class="container resource-grid">{cards}</div></section>
 {footer()}
-</body>
-</html>'''
-    write(ROOT / "resources" / "index.html", html)
+</body></html>''')
 
     for r in RESOURCES:
-        sections = "".join(
-            f'<section class="content-block"><h2>{esc(h)}</h2><p>{esc(p)}</p></section>'
-            for h, p in r["sections"]
-        )
-        others = "".join(
-            f'<li><a href="/resources/{o["slug"]}/">{esc(o["title"])}</a></li>'
-            for o in RESOURCES if o["slug"] != r["slug"]
-        )
+        sections = "".join(f'<section class="content-block"><h2>{esc(h)}</h2><p>{esc(p)}</p></section>' for h, p in r["sections"])
+        others = "".join(f'<li><a href="/resources/{o["slug"]}/">{esc(o["title"])}</a></li>' for o in RESOURCES if o["slug"] != r["slug"])
         crumb_nav, crumb_schema = breadcrumbs([("Home", "/"), ("Resources", "/resources/"), (r["title"], None)])
-        article_schema = {
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": r["title"],
-            "description": r["meta_desc"],
-            "image": DOMAIN + r["image"],
-            "datePublished": "2026-08-07",
-            "dateModified": TODAY,
+        article = {
+            "@context": "https://schema.org", "@type": "Article",
+            "headline": r["title"], "description": r["meta_desc"], "image": DOMAIN + r["image"],
+            "datePublished": "2026-08-07", "dateModified": TODAY,
             "author": {"@type": "Organization", "name": BRAND},
-            "publisher": {
-                "@type": "Organization",
-                "name": BRAND,
-                "logo": {"@type": "ImageObject", "url": DOMAIN + "/LOGO.png"},
-            },
+            "publisher": {"@type": "Organization", "name": BRAND, "logo": {"@type": "ImageObject", "url": DOMAIN + "/LOGO.png"}},
             "mainEntityOfPage": f"{DOMAIN}/resources/{r['slug']}/",
         }
-        html = f'''{head(f"{r['title']} | {BRAND}", r["meta_desc"], f"{DOMAIN}/resources/{r['slug']}/", og_image=DOMAIN + r["image"], schemas=[article_schema, crumb_schema, faq_schema(r["faqs"])], article=True)}
+        write(ROOT / "resources" / r["slug"] / "index.html", f'''{head(f"{r['title']} | {BRAND}", r["meta_desc"], f"{DOMAIN}/resources/{r['slug']}/", DOMAIN + r["image"], [article, crumb_schema, faq_schema(r["faqs"])], True)}
 <body class="inner-page">
 <a class="skip-link" href="#main">Skip to content</a>
 {header("resources")}
@@ -904,78 +919,46 @@ def build_resource_pages():
 {crumb_nav}
 <section class="section page-layout">
   <div class="container page-layout-grid">
-    <article class="page-main article-main">
+    <article class="page-main">
       <div class="content-block intro-block">
         <p>{esc(r["intro"])}</p>
-        <p>Need lockout help now? Call <a href="tel:{PHONE_TEL}"><strong>{PHONE_DISPLAY}</strong></a>.</p>
+        <p>Need help now? Call <a href="tel:{PHONE_TEL}"><strong>{PHONE_DISPLAY}</strong></a>.</p>
       </div>
       {sections}
-      <section class="content-block">
-        <h2>Related Guides</h2>
-        <ul class="text-list">{others}</ul>
-      </section>
-      <section class="content-block">
-        <h2>FAQ</h2>
-        <div class="faq-list">{faq_html(r["faqs"])}</div>
-      </section>
+      <section class="content-block"><h2>Related Guides</h2><ul class="text-list">{others}</ul></section>
+      <section class="content-block"><h2>FAQ</h2><div class="faq-list">{faq_html(r["faqs"])}</div></section>
     </article>
     {sidebar()}
   </div>
 </section>
 <section class="roadside-cta">
   <div class="container roadside-cta-inner">
-    <div>
-      <p class="eyebrow">STILL LOCKED OUT?</p>
-      <h2>Call Lockout Pro SWFL</h2>
-    </div>
+    <div><p class="eyebrow">NEED HELP?</p><h2>Call Lockout Pro SWFL</h2></div>
     <a class="btn btn-primary btn-xl" href="tel:{PHONE_TEL}">CALL {PHONE_DISPLAY}</a>
   </div>
 </section>
 {footer()}
-</body>
-</html>'''
-        write(ROOT / "resources" / r["slug"] / "index.html", html)
+</body></html>''')
 
-    for old_slug, (target, msg) in RESOURCE_REDIRECTS.items():
-        title = old_slug.replace("-", " ").title()
-        write(
-            ROOT / "resources" / old_slug / "index.html",
-            redirect_page(title, msg, target, f"{DOMAIN}/resources/{old_slug}/"),
-        )
+    for old, (target, msg) in RESOURCE_REDIRECTS.items():
+        write(ROOT / "resources" / old / "index.html", redirect_page(old.replace("-", " ").title(), msg, target, f"{DOMAIN}/resources/{old}/"))
 
 
 def build_sitemap_and_llms():
-    urls = [
-        (f"{DOMAIN}/", "1.0", "weekly"),
-        (f"{DOMAIN}/services/", "0.9", "weekly"),
-        (f"{DOMAIN}/locations/", "0.9", "weekly"),
-        (f"{DOMAIN}/resources/", "0.9", "weekly"),
-    ]
+    urls = [(f"{DOMAIN}/", "1.0", "weekly"), (f"{DOMAIN}/services/", "0.9", "weekly"), (f"{DOMAIN}/locations/", "0.9", "weekly"), (f"{DOMAIN}/resources/", "0.9", "weekly")]
     for s in SERVICES:
         urls.append((f"{DOMAIN}/services/{s['slug']}/", "0.8", "monthly"))
     for a in AREAS:
         urls.append((f"{DOMAIN}/locations/{a['slug']}/", "0.8", "monthly"))
     for r in RESOURCES:
         urls.append((f"{DOMAIN}/resources/{r['slug']}/", "0.7", "monthly"))
-
     body = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for loc, pri, freq in urls:
-        body.append(f"""  <url>
-    <loc>{loc}</loc>
-    <lastmod>{TODAY}</lastmod>
-    <changefreq>{freq}</changefreq>
-    <priority>{pri}</priority>
-  </url>""")
+        body.append(f"  <url>\n    <loc>{loc}</loc>\n    <lastmod>{TODAY}</lastmod>\n    <changefreq>{freq}</changefreq>\n    <priority>{pri}</priority>\n  </url>")
     body.append("</urlset>")
     write(ROOT / "sitemap.xml", "\n".join(body) + "\n")
     write(ROOT / "robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {DOMAIN}/sitemap.xml\n")
-
-    service_lines = "\n".join(f"- {s['name']}: {DOMAIN}/services/{s['slug']}/" for s in SERVICES)
-    city_lines = "\n".join(f"- {a['name']}: {DOMAIN}/locations/{a['slug']}/" for a in AREAS)
-    article_lines = "\n".join(f"- {r['title']}: {DOMAIN}/resources/{r['slug']}/" for r in RESOURCES)
-    write(
-        ROOT / "llms.txt",
-        f"""# {BRAND}
+    write(ROOT / "llms.txt", f"""# {BRAND}
 
 Website:
 {DOMAIN}/
@@ -984,46 +967,29 @@ Business:
 {BRAND}
 
 Description:
-Automotive lockout specialist serving Southwest Florida. Primary focus: car lockouts, emergency vehicle lockouts, trunk lockouts, fleet and commercial vehicle lockouts.
+Lockout help across Southwest Florida for vehicles and homes — car lockouts, truck & SUV lockouts, trunk lockouts, home lockouts, apartment lockouts, condo lockouts, and garage lockouts.
 
 Phone:
 {PHONE_DISPLAY}
 
-Business Type:
-Automotive Lockout Specialist (vehicle lockouts)
-
-Primary Service Area:
-Fort Myers
-Cape Coral
-Naples
-Bonita Springs
-Estero
-North Naples
-Fort Myers Beach
-Lehigh Acres
-San Carlos Park
-North Fort Myers
-Southwest Florida
-
 Services:
-{service_lines}
+{chr(10).join(f"- {s['name']}: {DOMAIN}/services/{s['slug']}/" for s in SERVICES)}
 
 City Pages:
-{city_lines}
+{chr(10).join(f"- {a['name']}: {DOMAIN}/locations/{a['slug']}/" for a in AREAS)}
 
 Resource Center:
 {DOMAIN}/resources/
 
 Articles:
-{article_lines}
+{chr(10).join(f"- {r['title']}: {DOMAIN}/resources/{r['slug']}/" for r in RESOURCES)}
 
 Related Company:
-A Good Locksmith (keys, programming, residential & commercial): {AGL}
+A Good Locksmith (rekeying, installations, key replacement): {AGL}
 
 Website Purpose:
-Help drivers locked out of their vehicles in Southwest Florida quickly reach Lockout Pro SWFL.
-""",
-    )
+Help people locked out of vehicles or homes in Southwest Florida quickly reach Lockout Pro SWFL.
+""")
 
 
 def main():
@@ -1031,7 +997,7 @@ def main():
     build_location_pages()
     build_resource_pages()
     build_sitemap_and_llms()
-    print("Lockout-focused pages generated.")
+    print("Pages generated.")
 
 
 if __name__ == "__main__":

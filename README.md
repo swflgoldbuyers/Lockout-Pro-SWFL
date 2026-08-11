@@ -1,12 +1,12 @@
 # Lockout Pro SWFL
 
-Official website for **Lockout Pro SWFL** — Southwest Florida’s automotive **lockout** specialist.
+Official website for **Lockout Pro SWFL** — Southwest Florida lockout help for vehicles and homes.
 
 - Domain: [lockoutproswfl.com](https://lockoutproswfl.com)
 - Phone: **(239) 380-5240**
-- Focus: Vehicle lockouts (cars, trucks, SUVs, fleet/commercial)
+- Focus: Vehicle lockouts + home/residential lockouts
 
-Related company for keys, programming, and home/business locks: [A Good Locksmith](https://agoodlocksmith.com)
+Related company for rekeying, installations, and key replacement: [A Good Locksmith](https://agoodlocksmith.com)
 
 ## Local preview
 
@@ -19,5 +19,3 @@ python3 -m http.server 8080
 ```bash
 python3 build_site.py
 ```
-
-Hand-crafted: `index.html`, `style.css`, `script.js`, branding assets, `CNAME`.
