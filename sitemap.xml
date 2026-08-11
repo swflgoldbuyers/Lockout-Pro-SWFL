@@ -2,211 +2,139 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://lockoutproswfl.com/</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://lockoutproswfl.com/services/</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lockoutproswfl.com/locations/</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lockoutproswfl.com/resources/</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://lockoutproswfl.com/services/car-lockouts/</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lockoutproswfl.com/services/lost-car-keys/</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lockoutproswfl.com/services/car-key-replacement/</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lockoutproswfl.com/services/key-fob-programming/</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lockoutproswfl.com/services/smart-keys/</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lockoutproswfl.com/services/push-to-start-keys/</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lockoutproswfl.com/services/broken-car-key-extraction/</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lockoutproswfl.com/services/ignition-repair/</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lockoutproswfl.com/services/duplicate-car-keys/</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://lockoutproswfl.com/services/motorcycle-keys/</loc>
-    <lastmod>2026-08-07</lastmod>
+    <loc>https://lockoutproswfl.com/services/emergency-vehicle-lockout/</loc>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://lockoutproswfl.com/services/trunk-lockouts/</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lockoutproswfl.com/services/fleet-vehicle-locksmith/</loc>
-    <lastmod>2026-08-07</lastmod>
+    <loc>https://lockoutproswfl.com/services/fleet-vehicle-lockouts/</loc>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lockoutproswfl.com/services/emergency-automotive-locksmith/</loc>
-    <lastmod>2026-08-07</lastmod>
+    <loc>https://lockoutproswfl.com/services/commercial-vehicle-lockout/</loc>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://lockoutproswfl.com/locations/fort-myers/</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://lockoutproswfl.com/locations/cape-coral/</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://lockoutproswfl.com/locations/naples/</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://lockoutproswfl.com/locations/bonita-springs/</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://lockoutproswfl.com/locations/estero/</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://lockoutproswfl.com/locations/north-naples/</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://lockoutproswfl.com/locations/fort-myers-beach/</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://lockoutproswfl.com/locations/lehigh-acres/</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://lockoutproswfl.com/locations/san-carlos-park/</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://lockoutproswfl.com/locations/north-fort-myers/</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://lockoutproswfl.com/resources/locked-out-of-your-car/</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lockoutproswfl.com/resources/lost-car-keys-guide/</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lockoutproswfl.com/resources/how-much-does-a-car-locksmith-cost/</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lockoutproswfl.com/resources/key-fob-stopped-working/</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://lockoutproswfl.com/resources/can-a-locksmith-replace-push-to-start-keys/</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lockoutproswfl.com/resources/prevent-locking-keys-in-your-car/</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lockoutproswfl.com/resources/signs-ignition-cylinder-failing/</loc>
-    <lastmod>2026-08-07</lastmod>
+    <loc>https://lockoutproswfl.com/resources/how-much-does-a-car-lockout-cost/</loc>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://lockoutproswfl.com/resources/spare-car-keys-every-driver/</loc>
-    <lastmod>2026-08-07</lastmod>
+    <loc>https://lockoutproswfl.com/resources/locked-out-engine-running/</loc>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

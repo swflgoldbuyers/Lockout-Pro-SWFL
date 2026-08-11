@@ -7,13 +7,13 @@ Business:
 Lockout Pro SWFL
 
 Description:
-Mobile automotive locksmith serving Southwest Florida. Emergency car lockouts, lost car keys, key fob programming, smart keys, ignition assistance, and related automotive locksmith services.
+Automotive lockout specialist serving Southwest Florida. Primary focus: car lockouts, emergency vehicle lockouts, trunk lockouts, fleet and commercial vehicle lockouts.
 
 Phone:
 (239) 380-5240
 
 Business Type:
-Mobile Automotive Locksmith (automotive only)
+Automotive Lockout Specialist (vehicle lockouts)
 
 Primary Service Area:
 Fort Myers
@@ -30,18 +30,10 @@ Southwest Florida
 
 Services:
 - Car Lockouts: https://lockoutproswfl.com/services/car-lockouts/
-- Lost Car Keys: https://lockoutproswfl.com/services/lost-car-keys/
-- Car Key Replacement: https://lockoutproswfl.com/services/car-key-replacement/
-- Key Fob Programming: https://lockoutproswfl.com/services/key-fob-programming/
-- Smart Keys: https://lockoutproswfl.com/services/smart-keys/
-- Push-To-Start Keys: https://lockoutproswfl.com/services/push-to-start-keys/
-- Broken Car Key Extraction: https://lockoutproswfl.com/services/broken-car-key-extraction/
-- Ignition Repair: https://lockoutproswfl.com/services/ignition-repair/
-- Duplicate Car Keys: https://lockoutproswfl.com/services/duplicate-car-keys/
-- Motorcycle Keys: https://lockoutproswfl.com/services/motorcycle-keys/
+- Emergency Vehicle Lockout: https://lockoutproswfl.com/services/emergency-vehicle-lockout/
 - Trunk Lockouts: https://lockoutproswfl.com/services/trunk-lockouts/
-- Fleet Vehicle Locksmith: https://lockoutproswfl.com/services/fleet-vehicle-locksmith/
-- Emergency Automotive Locksmith: https://lockoutproswfl.com/services/emergency-automotive-locksmith/
+- Fleet Vehicle Lockouts: https://lockoutproswfl.com/services/fleet-vehicle-lockouts/
+- Commercial Vehicle Lockout: https://lockoutproswfl.com/services/commercial-vehicle-lockout/
 
 City Pages:
 - Fort Myers: https://lockoutproswfl.com/locations/fort-myers/
@@ -60,16 +52,12 @@ https://lockoutproswfl.com/resources/
 
 Articles:
 - Locked Out Of Your Car? Here's What To Do: https://lockoutproswfl.com/resources/locked-out-of-your-car/
-- Lost Your Car Keys? Complete Guide: https://lockoutproswfl.com/resources/lost-car-keys-guide/
-- How Much Does A Car Locksmith Cost?: https://lockoutproswfl.com/resources/how-much-does-a-car-locksmith-cost/
-- Key Fob Stopped Working?: https://lockoutproswfl.com/resources/key-fob-stopped-working/
-- Can A Locksmith Replace Push-To-Start Keys?: https://lockoutproswfl.com/resources/can-a-locksmith-replace-push-to-start-keys/
 - How To Prevent Locking Keys In Your Car: https://lockoutproswfl.com/resources/prevent-locking-keys-in-your-car/
-- Signs Your Ignition Cylinder Is Failing: https://lockoutproswfl.com/resources/signs-ignition-cylinder-failing/
-- Spare Car Keys: Why Every Driver Should Have One: https://lockoutproswfl.com/resources/spare-car-keys-every-driver/
+- How Much Does A Car Lockout Cost?: https://lockoutproswfl.com/resources/how-much-does-a-car-lockout-cost/
+- Locked Out With The Engine Running?: https://lockoutproswfl.com/resources/locked-out-engine-running/
 
-Sister Company:
-A Good Locksmith (residential & commercial): https://agoodlocksmith.com
+Related Company:
+A Good Locksmith (keys, programming, residential & commercial): https://agoodlocksmith.com
 
 Website Purpose:
-Help stranded drivers in Southwest Florida quickly reach a professional automotive locksmith and understand vehicle key and lockout options.
+Help drivers locked out of their vehicles in Southwest Florida quickly reach Lockout Pro SWFL.
