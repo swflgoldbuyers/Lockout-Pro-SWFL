@@ -51,7 +51,7 @@ SERVICES = [
             ("What if I'm locked out of my house too?", "We also help with home, apartment, condo, and garage lockouts. Call and we'll get you sorted."),
         ],
         "related": ["truck-suv-lockouts", "trunk-lockouts", "emergency-vehicle-lockout", "home-lockouts"],
-        "image": "/assets/images/hero-collage.jpg",
+        "image": "/assets/images/auto-premium.webp",
     },
     {
         "slug": "truck-suv-lockouts",
@@ -74,7 +74,7 @@ SERVICES = [
             ("Are you available after hours?", "Yes. Emergency lockout help is available 24/7 across our service area."),
         ],
         "related": ["car-lockouts", "fleet-vehicle-lockouts", "emergency-vehicle-lockout"],
-        "image": "/assets/images/driving.jpg",
+        "image": "/assets/images/auto-premium.webp",
     },
     {
         "slug": "trunk-lockouts",
@@ -97,7 +97,7 @@ SERVICES = [
             ("Will you damage the trunk?", "Our goal is careful access whenever possible."),
         ],
         "related": ["car-lockouts", "emergency-vehicle-lockout", "truck-suv-lockouts"],
-        "image": "/assets/images/swfl-vehicles.jpg",
+        "image": "/assets/images/auto-premium.webp",
     },
     {
         "slug": "emergency-vehicle-lockout",
@@ -120,7 +120,7 @@ SERVICES = [
             ("Do you also help with home lockouts?", "Yes. We help with vehicle and residential lockouts."),
         ],
         "related": ["car-lockouts", "trunk-lockouts", "emergency-residential-lockout"],
-        "image": "/assets/images/hero-collage.jpg",
+        "image": "/assets/images/auto-premium.webp",
     },
     {
         "slug": "fleet-vehicle-lockouts",
@@ -143,7 +143,7 @@ SERVICES = [
             ("Do you come to job sites?", "Yes — mobile service to your location across SWFL."),
         ],
         "related": ["truck-suv-lockouts", "car-lockouts", "emergency-vehicle-lockout"],
-        "image": "/assets/images/driving.jpg",
+        "image": "/assets/images/auto-premium.webp",
     },
     # Residential
     {
@@ -168,7 +168,7 @@ SERVICES = [
             ("Are you available at night?", "Yes. Emergency residential lockout help is available 24/7."),
         ],
         "related": ["apartment-lockouts", "condo-lockouts", "garage-lockouts", "emergency-residential-lockout"],
-        "image": "/assets/images/home-lockout.jpg",
+        "image": "/assets/images/home-premium.webp",
     },
     {
         "slug": "apartment-lockouts",
@@ -214,7 +214,7 @@ SERVICES = [
             ("Are weekend lockouts covered?", "Yes. We're available 24/7 for emergency lockout help."),
         ],
         "related": ["apartment-lockouts", "home-lockouts", "garage-lockouts"],
-        "image": "/assets/images/residential.jpg",
+        "image": "/assets/images/home-premium.webp",
     },
     {
         "slug": "garage-lockouts",
@@ -237,7 +237,7 @@ SERVICES = [
             ("Do you help with house lockouts too?", "Yes. Home lockouts are a core service."),
         ],
         "related": ["home-lockouts", "car-lockouts", "emergency-residential-lockout"],
-        "image": "/assets/images/home-lockout.jpg",
+        "image": "/assets/images/home-premium.webp",
     },
     {
         "slug": "emergency-residential-lockout",
@@ -260,7 +260,7 @@ SERVICES = [
             ("Can you also help if my keys are locked in the car?", "Yes — vehicle lockouts are part of what we do."),
         ],
         "related": ["home-lockouts", "apartment-lockouts", "emergency-vehicle-lockout"],
-        "image": "/assets/images/residential.jpg",
+        "image": "/assets/images/home-premium.webp",
     },
 ]
 
@@ -291,7 +291,7 @@ RESOURCES = [
         "eyebrow": "VEHICLE GUIDE",
         "meta_desc": "Locked your keys in the car in SWFL? Stay safe, avoid damage, and get help fast.",
         "minutes": 5,
-        "image": "/assets/images/hero-collage.jpg",
+        "image": "/assets/images/auto-premium.webp",
         "intro": "A car lockout rarely happens at a convenient time. Here's what to do next — stay safe, avoid damage, and get help.",
         "sections": [
             ("1. Check Safety First", "If a child or pet is inside, call for help immediately. Move to a safe place near the vehicle."),
@@ -311,7 +311,7 @@ RESOURCES = [
         "eyebrow": "HOME GUIDE",
         "meta_desc": "Locked out of your house in SWFL? Practical next steps and when to call for lockout help.",
         "minutes": 4,
-        "image": "/assets/images/home-lockout.jpg",
+        "image": "/assets/images/home-premium.webp",
         "intro": "Being locked out of your house is stressful — especially with kids, pets, or Florida heat. Here's a calm plan.",
         "sections": [
             ("1. Check Other Entries", "Try side doors, garage access, and whether anyone else has a key."),
@@ -331,7 +331,7 @@ RESOURCES = [
         "eyebrow": "PREVENTION",
         "meta_desc": "Simple habits to reduce car lockouts for Southwest Florida drivers.",
         "minutes": 3,
-        "image": "/assets/images/swfl-vehicles.jpg",
+        "image": "/assets/images/auto-premium.webp",
         "intro": "Most car lockouts are preventable. A few habits go a long way.",
         "sections": [
             ("Keep Keys In A Fixed Place", "Same pocket or bag pocket every time."),
@@ -367,7 +367,7 @@ RESOURCES = [
         "eyebrow": "URGENT",
         "meta_desc": "Locked out of a running car in SWFL? What to do next.",
         "minutes": 3,
-        "image": "/assets/images/hero-collage.jpg",
+        "image": "/assets/images/auto-premium.webp",
         "intro": "A running vehicle with keys inside raises the stakes. Stay calm and call for help.",
         "sections": [
             ("Call Immediately", "Tell us the engine is running and share your location plus vehicle details."),
@@ -408,10 +408,8 @@ def header(active: str = "") -> str:
     return f'''<header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="/" aria-label="{BRAND} home">
-      <img src="/LOGO.png" alt="{BRAND}" class="brand-logo" width="64" height="64">
-      <span class="brand-text">
-        <span class="brand-name"><span class="brand-lockout">LOCKOUT</span> <span class="brand-pro">PRO</span> <span class="brand-swfl">SWFL</span></span>
-      </span>
+      <img src="/LOGO.png" alt="{BRAND}" class="brand-logo" width="44" height="44">
+      <span class="brand-name"><span class="brand-lockout">LOCKOUT</span> <span class="brand-pro">PRO</span> <span class="brand-swfl">SWFL</span></span>
     </a>
     <nav class="main-nav" aria-label="Primary">
       <ul class="nav-list">
@@ -423,7 +421,7 @@ def header(active: str = "") -> str:
       </ul>
     </nav>
     <a class="header-phone" href="tel:{PHONE_TEL}">
-      <span class="header-phone-label">24/7 Call Now</span>
+      <span class="header-phone-label">24/7</span>
       <span class="header-phone-num">{PHONE_DISPLAY}</span>
     </a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
@@ -443,47 +441,38 @@ def header(active: str = "") -> str:
 
 
 def footer() -> str:
-    auto_links = "\n".join(f'<li><a href="/services/{s["slug"]}/">{esc(s["name"])}</a></li>' for s in AUTO_SERVICES[:5])
-    home_links = "\n".join(f'<li><a href="/services/{s["slug"]}/">{esc(s["name"])}</a></li>' for s in HOME_SERVICES[:5])
-    area_links = "\n".join(f'<li><a href="/locations/{a["slug"]}/">{esc(a["name"])}</a></li>' for a in AREAS[:6])
+    auto_links = "\n".join(f'<li><a href="/services/{s["slug"]}/">{esc(s["name"])}</a></li>' for s in AUTO_SERVICES[:4])
+    home_links = "\n".join(f'<li><a href="/services/{s["slug"]}/">{esc(s["name"])}</a></li>' for s in HOME_SERVICES[:4])
+    area_links = "\n".join(f'<li><a href="/locations/{a["slug"]}/">{esc(a["name"])}</a></li>' for a in AREAS[:4])
     return f'''<footer class="site-footer" id="contact">
   <div class="container footer-grid">
     <div class="footer-brand">
       <a class="brand footer-brand-link" href="/">
-        <img src="/LOGO.png" alt="{BRAND}" width="56" height="56">
+        <img src="/LOGO.png" alt="{BRAND}" width="44" height="44">
         <span class="brand-name"><span class="brand-lockout">LOCKOUT</span> <span class="brand-pro">PRO</span> <span class="brand-swfl">SWFL</span></span>
       </a>
-      <p>Locked out? Lockout Pro SWFL helps with vehicle and home lockouts across Southwest Florida.</p>
       <a class="footer-phone" href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a>
-      <p class="footer-hours">Available 24/7</p>
+      <p class="footer-hours">24/7 · Southwest Florida</p>
     </div>
     <div>
-      <h3>Vehicle Lockouts</h3>
+      <h3>Vehicle</h3>
       <ul>{auto_links}</ul>
     </div>
     <div>
-      <h3>Home Lockouts</h3>
+      <h3>Home</h3>
       <ul>{home_links}</ul>
-      <h3 class="footer-spaced">Areas</h3>
+    </div>
+    <div>
+      <h3>Areas</h3>
       <ul>{area_links}
         <li><a href="/locations/">All Areas →</a></li>
       </ul>
-    </div>
-    <div>
-      <h3>More Locksmith Help</h3>
-      <p>Need rekeying, lock installation, or key replacement?</p>
-      <a class="footer-outlink" href="{AGL}" rel="noopener noreferrer" target="_blank">Visit A Good Locksmith →</a>
-      <h3 class="footer-spaced">Resources</h3>
-      <ul>
-        <li><a href="/resources/">Resource Center</a></li>
-        <li><a href="/resources/locked-out-of-your-car/">Car Lockout Guide</a></li>
-        <li><a href="/resources/locked-out-of-your-house/">Home Lockout Guide</a></li>
-      </ul>
+      <a class="footer-outlink" href="{AGL}" rel="noopener noreferrer" target="_blank">A Good Locksmith →</a>
     </div>
   </div>
   <div class="footer-bottom">
     <div class="container footer-bottom-inner">
-      <p>© {date.today().year} {BRAND}. All rights reserved.</p>
+      <p>© {date.today().year} {BRAND}</p>
       <p>Southwest Florida</p>
     </div>
   </div>
@@ -495,7 +484,7 @@ def footer() -> str:
 <script src="/script.js" defer></script>'''
 
 
-def head(title, description, canonical, og_image=f"{DOMAIN}/assets/images/hero-collage.jpg", schemas=None, article=False):
+def head(title, description, canonical, og_image=f"{DOMAIN}/assets/images/hero-desktop.webp", schemas=None, article=False):
     schema_html = ""
     if schemas:
         for schema in schemas:
@@ -597,7 +586,7 @@ def org_schema():
         "name": BRAND,
         "url": DOMAIN + "/",
         "logo": DOMAIN + "/LOGO.png",
-        "image": DOMAIN + "/assets/images/hero-collage.jpg",
+        "image": DOMAIN + "/assets/images/hero-desktop.webp",
         "telephone": PHONE_SCHEMA,
         "priceRange": "$$",
         "description": "24/7 lockout help across Southwest Florida — vehicle lockouts and home lockouts for cars, trucks, SUVs, houses, apartments, condos, and garages.",
@@ -619,7 +608,7 @@ def redirect_page(title, message, target, canonical):
 <a class="skip-link" href="#main">Skip to content</a>
 {header("services")}
 <section class="page-hero" id="main">
-  <div class="page-hero-media" style="background-image:url('/assets/images/hero-collage.jpg')"></div>
+  <div class="page-hero-media" style="background-image:url('/assets/images/hero-desktop.webp')"></div>
   <div class="page-hero-veil"></div>
   <div class="container page-hero-content">
     <p class="eyebrow">LOCKOUT PRO SWFL</p>
@@ -662,7 +651,7 @@ def build_service_pages():
 <a class="skip-link" href="#main">Skip to content</a>
 {header("services")}
 <section class="page-hero" id="main">
-  <div class="page-hero-media" style="background-image:url('/assets/images/hero-collage.jpg')"></div>
+  <div class="page-hero-media" style="background-image:url('/assets/images/hero-desktop.webp')"></div>
   <div class="page-hero-veil"></div>
   <div class="container page-hero-content">
     <p class="eyebrow">LOCKOUT SERVICES</p>
@@ -696,7 +685,7 @@ def build_service_pages():
             for slug in s["related"] if slug in SERVICE_BY_SLUG
         )
         body = "".join(f'<section class="content-block"><h2>{esc(h)}</h2><p>{esc(p)}</p></section>' for h, p in s["body"])
-        areas = ", ".join(f'<a href="/locations/{a["slug"]}/">{esc(a["name"])}</a>' for a in AREAS[:6])
+        areas = ", ".join(f'<a href="/locations/{a["slug"]}/">{esc(a["name"])}</a>' for a in AREAS[:4])
         crumb_nav, crumb_schema = breadcrumbs([("Home", "/"), ("Services", "/services/"), (s["name"], None)])
         service_schema = {
             "@context": "https://schema.org", "@type": "Service",
@@ -770,7 +759,7 @@ def build_location_pages():
 <a class="skip-link" href="#main">Skip to content</a>
 {header("locations")}
 <section class="page-hero" id="main">
-  <div class="page-hero-media" style="background-image:url('/assets/images/residential.jpg')"></div>
+  <div class="page-hero-media" style="background-image:url('/assets/images/home-premium.webp')"></div>
   <div class="page-hero-veil"></div>
   <div class="container page-hero-content">
     <p class="eyebrow">SOUTHWEST FLORIDA</p>
@@ -785,8 +774,8 @@ def build_location_pages():
 </body></html>''')
 
     for a in AREAS:
-        auto = "".join(f'<li><a href="/services/{s["slug"]}/">{esc(s["name"])}</a></li>' for s in AUTO_SERVICES[:5])
-        home = "".join(f'<li><a href="/services/{s["slug"]}/">{esc(s["name"])}</a></li>' for s in HOME_SERVICES[:5])
+        auto = "".join(f'<li><a href="/services/{s["slug"]}/">{esc(s["name"])}</a></li>' for s in AUTO_SERVICES[:4])
+        home = "".join(f'<li><a href="/services/{s["slug"]}/">{esc(s["name"])}</a></li>' for s in HOME_SERVICES[:4])
         others = "".join(f'<li><a href="/locations/{o["slug"]}/">{esc(o["name"])}</a></li>' for o in AREAS if o["slug"] != a["slug"])
         crumb_nav, crumb_schema = breadcrumbs([("Home", "/"), ("Service Areas", "/locations/"), (a["name"], None)])
         faqs = [
@@ -811,7 +800,7 @@ def build_location_pages():
 <a class="skip-link" href="#main">Skip to content</a>
 {header("locations")}
 <section class="page-hero" id="main">
-  <div class="page-hero-media" style="background-image:url('/assets/images/hero-collage.jpg')"></div>
+  <div class="page-hero-media" style="background-image:url('/assets/images/hero-desktop.webp')"></div>
   <div class="page-hero-veil"></div>
   <div class="container page-hero-content">
     <p class="eyebrow">{esc(a["county"]).upper()}</p>
@@ -878,7 +867,7 @@ def build_resource_pages():
 <a class="skip-link" href="#main">Skip to content</a>
 {header("resources")}
 <section class="page-hero" id="main">
-  <div class="page-hero-media" style="background-image:url('/assets/images/hero-collage.jpg')"></div>
+  <div class="page-hero-media" style="background-image:url('/assets/images/hero-desktop.webp')"></div>
   <div class="page-hero-veil"></div>
   <div class="container page-hero-content">
     <p class="eyebrow">RESOURCE CENTER</p>
