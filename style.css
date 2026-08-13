@@ -806,7 +806,7 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
   gap: 1.5rem;
   align-items: center;
 }
-.why-copy p { color: var(--muted); margin: 0.65rem 0 1rem; max-width: 480px; }
+.why-row .why-copy p { color: var(--muted); margin: 0.65rem 0 1rem; max-width: 480px; }
 .why-note {
   margin-top: 1rem !important;
   font-size: 0.95rem;
