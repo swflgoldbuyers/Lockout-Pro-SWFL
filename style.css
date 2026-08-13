@@ -301,7 +301,7 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
   position: relative;
   z-index: 2;
   width: min(740px, 92%);
-  margin: 0.55rem auto 0.85rem;
+  margin: 0.5rem auto 0.55rem;
   text-align: center;
   justify-self: center;
   animation: riseIn 0.7s var(--ease) both;
@@ -354,11 +354,11 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
   position: relative;
   z-index: 2;
   width: 100%;
-  padding: 0.55rem 0 0.95rem;
+  padding: 0.35rem 0 0.85rem;
   background: linear-gradient(180deg, transparent, rgba(4, 13, 26, 0.64));
 }
 .hero-reviews[hidden] { display: none !important; }
-.hero-reviews-head { text-align: center; margin-bottom: 0.6rem; }
+.hero-reviews-head { text-align: center; margin-bottom: 0.55rem; }
 .hero-reviews-head h2 {
   font-size: clamp(1.22rem, 2.3vw, 1.55rem);
   margin-bottom: 0;
@@ -529,7 +529,7 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
 .help-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 0.85rem;
+  gap: 1rem;
   align-items: stretch;
 }
 .help-services {
@@ -537,28 +537,37 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
   grid-template-columns: 1fr 1fr;
   gap: 0.75rem;
 }
+.help-services .category-panel {
+  min-height: 210px;
+  padding: 1.25rem 1.2rem;
+}
 .steps-process {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.65rem;
+  gap: 0.75rem;
   margin: 0;
 }
 .steps-process li {
   background: #fff;
-  padding: 0.95rem 1.05rem;
+  padding: 1.15rem 1.2rem;
   box-shadow: var(--shadow);
   display: flex;
-  gap: 0.7rem;
-  align-items: flex-start;
+  gap: 0.75rem;
+  align-items: center;
   min-width: 0;
 }
+.steps-process .step-num {
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.1rem;
+}
 .steps-process h3 {
-  font-size: clamp(1.15rem, 1.8vw, 1.3rem);
-  margin-bottom: 0.2rem;
+  font-size: clamp(1.18rem, 1.9vw, 1.35rem);
+  margin-bottom: 0.18rem;
   color: var(--navy-900);
 }
 .steps-process p {
-  font-size: 0.95rem;
+  font-size: 0.98rem;
   line-height: 1.4;
   color: var(--muted);
 }
@@ -584,23 +593,26 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
 /* Why — logo + story on dark navy */
 .why-simple {
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 1.5rem 2.1rem;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1.6rem clamp(1.6rem, 3vw, 2.6rem);
   align-items: center;
-  max-width: 980px;
-  margin-inline: auto;
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
 }
 .why-brand {
   display: grid;
   place-items: center;
-  width: clamp(110px, 14vw, 140px);
+  align-self: center;
+  width: clamp(128px, 16vw, 168px);
+  padding: 0.35rem;
 }
 .why-logo {
-  width: clamp(110px, 14vw, 136px);
+  width: clamp(120px, 15vw, 156px);
   height: auto;
   aspect-ratio: 1;
   object-fit: contain;
-  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.35));
+  filter: drop-shadow(0 14px 30px rgba(0, 0, 0, 0.4));
 }
 .why-copy .eyebrow {
   color: var(--amber);
@@ -608,15 +620,15 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
 }
 .why-copy h2 {
   color: #fff;
-  font-size: clamp(2.05rem, 4vw, 3rem);
+  font-size: clamp(2.15rem, 4.2vw, 3.15rem);
   margin-bottom: 0.15rem;
 }
 .why-story {
-  color: rgba(255, 255, 255, 0.86);
-  margin: 0.65rem 0 1.15rem;
-  max-width: 62ch;
-  font-size: clamp(1.04rem, 1.5vw, 1.14rem);
-  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0.7rem 0 1.25rem;
+  max-width: 68ch;
+  font-size: clamp(1.06rem, 1.55vw, 1.18rem);
+  line-height: 1.62;
 }
 .check-list-inline {
   display: grid;
@@ -626,26 +638,27 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
 .check-list-why {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.55rem 1.35rem;
+  gap: 0.65rem 0.9rem;
   margin-top: 0.15rem;
 }
 .check-list-why li {
   position: relative;
-  padding: 0.45rem 0.55rem 0.45rem 1.35rem;
-  color: rgba(255, 255, 255, 0.92);
+  padding: 0.7rem 0.8rem 0.7rem 1.45rem;
+  color: rgba(255, 255, 255, 0.94);
   font-weight: 600;
-  font-size: 1.02rem;
+  font-size: 1.04rem;
   line-height: 1.35;
-  background: rgba(255, 255, 255, 0.05);
-  border-left: 2px solid rgba(255, 122, 0, 0.75);
+  background: rgba(255, 255, 255, 0.06);
+  border-left: 2px solid rgba(255, 122, 0, 0.8);
 }
 .check-list-why li::before {
   content: "";
   position: absolute;
-  left: 0.55rem;
-  top: 0.85rem;
-  width: 0.4rem;
-  height: 0.4rem;
+  left: 0.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0.42rem;
+  height: 0.42rem;
   background: var(--orange);
 }
 
@@ -1316,12 +1329,13 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
   .home-hero h1 { font-size: clamp(2.35rem, 10vw, 3rem); }
   .hero-reviews { padding: 0.4rem 0 0.85rem; }
   .help-services { grid-template-columns: 1fr; }
+  .help-services .category-panel { min-height: 0; }
   .steps-process {
     grid-template-columns: 1fr;
-    gap: 0.55rem;
+    gap: 0.5rem;
   }
   .steps-process li {
-    padding: 0.9rem 1rem;
+    padding: 0.8rem 0.95rem;
     align-items: center;
   }
   .steps-rail {
@@ -1331,17 +1345,24 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
   .steps-rail li { flex: 1 1 30%; min-width: 9rem; }
   .why-simple {
     grid-template-columns: 1fr;
-    justify-items: start;
-    gap: 1.1rem;
+    justify-items: center;
+    text-align: center;
+    gap: 1rem;
   }
   .why-brand {
     width: auto;
   }
   .why-logo {
-    width: 88px;
+    width: 96px;
+  }
+  .why-story {
+    margin-inline: auto;
   }
   .check-list-inline,
-  .check-list-why { grid-template-columns: 1fr; }
+  .check-list-why { grid-template-columns: 1fr; width: 100%; }
+  .check-list-why li {
+    text-align: left;
+  }
   .local-band-map-bg { background-position: center 78%; }
   .hero-cta-row {
     flex-direction: column;
