@@ -97,10 +97,10 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
 }
 .section-why {
   padding: clamp(1.4rem, 2.6vw, 1.85rem) 0;
-  /* Medium branded navy — lighter than darkest Service Areas (#040d1a) */
-  background: #154878;
-  color: #fff;
-  border-top: 1px solid rgba(255, 122, 0, 0.22);
+  /* Calm light band between How We Help and dark Service Areas */
+  background: #eef2f7;
+  color: var(--ink);
+  border-top: 1px solid rgba(7, 30, 57, 0.06);
 }
 .section-muted { background: var(--mist); }
 .section-dark { background: var(--navy-950); color: #fff; }
@@ -257,7 +257,8 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
   border-radius: var(--radius);
 }
 
-/* Hero — compact integrated composition */
+/* Hero — compact integrated composition
+   Order: message/CTA → communities trust strip → reviews */
 .home-hero {
   position: relative;
   display: grid;
@@ -265,7 +266,7 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
   align-items: start;
   justify-items: stretch;
   min-height: 0;
-  padding: calc(var(--header-h) + 0.1rem) 0 0;
+  padding: calc(var(--header-h) + 0.45rem) 0 0;
   color: #fff;
   overflow: hidden;
 }
@@ -281,27 +282,16 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(4, 13, 26, 0.4) 0%, rgba(4, 13, 26, 0.32) 24%, rgba(4, 13, 26, 0.55) 58%, rgba(4, 13, 26, 0.92) 100%),
-    linear-gradient(105deg, rgba(4, 13, 26, 0.38) 0%, rgba(4, 13, 26, 0.14) 52%, rgba(4, 13, 26, 0.32) 100%);
+    linear-gradient(180deg, rgba(4, 13, 26, 0.58) 0%, rgba(4, 13, 26, 0.38) 26%, rgba(4, 13, 26, 0.52) 58%, rgba(4, 13, 26, 0.93) 100%),
+    linear-gradient(105deg, rgba(4, 13, 26, 0.42) 0%, rgba(4, 13, 26, 0.16) 52%, rgba(4, 13, 26, 0.34) 100%);
   pointer-events: none;
 }
-
-.hero-trust-float {
-  position: relative;
-  z-index: 3;
-  width: min(640px, 84%);
-  margin: 0.15rem auto 0.15rem;
-  border-radius: 10px;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.34);
-  overflow: hidden;
-}
-.hero-trust-float img { width: 100%; height: auto; display: block; }
 
 .home-hero-content {
   position: relative;
   z-index: 2;
   width: min(740px, 92%);
-  margin: 0.35rem auto 0.4rem;
+  margin: 0.2rem auto 0.45rem;
   text-align: center;
   justify-self: center;
   animation: riseIn 0.7s var(--ease) both;
@@ -310,7 +300,7 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
   margin-bottom: 0.35rem;
 }
 .home-hero h1 {
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.65rem;
   font-size: clamp(2.85rem, 7.4vw, 4.9rem);
   line-height: 0.92;
   text-shadow: 0 10px 32px rgba(0, 0, 0, 0.4);
@@ -330,6 +320,17 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
   justify-content: center;
   gap: 0.65rem 1rem;
 }
+
+.hero-trust-float {
+  position: relative;
+  z-index: 3;
+  width: min(620px, 86%);
+  margin: 0.1rem auto 0.35rem;
+  border-radius: 10px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.34);
+  overflow: hidden;
+}
+.hero-trust-float img { width: 100%; height: auto; display: block; }
 .hero-phone-inline {
   font-family: var(--font-display);
   font-size: clamp(1.45rem, 3.2vw, 1.95rem);
@@ -354,8 +355,8 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
   position: relative;
   z-index: 2;
   width: 100%;
-  padding: 0.35rem 0 0.85rem;
-  background: linear-gradient(180deg, transparent, rgba(4, 13, 26, 0.64));
+  padding: 0.2rem 0 0.75rem;
+  background: linear-gradient(180deg, transparent, rgba(4, 13, 26, 0.68));
 }
 .hero-reviews[hidden] { display: none !important; }
 .hero-reviews-head { text-align: center; margin-bottom: 0.55rem; }
@@ -634,7 +635,7 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
 .steps-rail h3 { font-size: 1.1rem; margin-bottom: 0.1rem; }
 .steps-rail p { font-size: 0.88rem; }
 
-/* Why Lockout Pro — compact unified about/trust panel */
+/* Why Lockout Pro — compact unified about/trust panel (light) */
 .why-panel {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
@@ -654,22 +655,22 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
 }
 .why-brand-row .eyebrow {
   margin-bottom: 0;
-  color: var(--amber);
+  color: var(--orange);
 }
 .why-logo {
   width: 44px;
   height: 44px;
   object-fit: contain;
   flex-shrink: 0;
-  filter: drop-shadow(0 5px 12px rgba(0, 0, 0, 0.22));
+  filter: drop-shadow(0 4px 10px rgba(4, 13, 26, 0.12));
 }
 .why-main h2 {
-  color: #fff;
+  color: var(--navy-900);
   font-size: clamp(1.9rem, 3.2vw, 2.4rem);
   margin-bottom: 0.45rem;
 }
 .why-story {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--muted);
   margin: 0;
   max-width: 46ch;
   font-size: clamp(0.97rem, 1.3vw, 1.05rem);
@@ -686,8 +687,10 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
   align-items: flex-start;
   gap: 0.5rem;
   padding: 0.55rem 0.65rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-left: 2px solid rgba(255, 122, 0, 0.9);
+  background: #fff;
+  border: 1px solid rgba(7, 30, 57, 0.08);
+  border-left: 2px solid var(--orange);
+  box-shadow: 0 4px 12px rgba(4, 13, 26, 0.04);
 }
 .why-feature-mark {
   flex-shrink: 0;
@@ -697,7 +700,7 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
   background: var(--orange);
 }
 .why-feature-label {
-  color: rgba(255, 255, 255, 0.95);
+  color: var(--navy-900);
   font-weight: 600;
   font-size: 0.92rem;
   line-height: 1.28;
@@ -1372,23 +1375,23 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
   .home-hero-media img { object-position: center 24%; }
   .home-hero-veil {
     background:
-      linear-gradient(180deg, rgba(4, 13, 26, 0.5) 0%, rgba(4, 13, 26, 0.45) 34%, rgba(4, 13, 26, 0.9) 100%);
-  }
-  .hero-trust-float {
-    width: min(100%, 90%);
-    margin: 0.2rem auto 0.1rem;
-    border-radius: 8px;
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
+      linear-gradient(180deg, rgba(4, 13, 26, 0.62) 0%, rgba(4, 13, 26, 0.48) 34%, rgba(4, 13, 26, 0.92) 100%);
   }
   .home-hero-content {
-    margin: 0.4rem auto 0.45rem;
+    margin: 0.25rem auto 0.4rem;
     width: min(100%, 92%);
   }
   .home-hero h1 {
     font-size: clamp(2.35rem, 10vw, 3rem);
-    margin-bottom: 0.65rem;
+    margin-bottom: 0.6rem;
   }
-  .hero-reviews { padding: 0.35rem 0 0.75rem; }
+  .hero-trust-float {
+    width: min(100%, 90%);
+    margin: 0.05rem auto 0.3rem;
+    border-radius: 8px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
+  }
+  .hero-reviews { padding: 0.15rem 0 0.7rem; }
   .help-services { grid-template-columns: 1fr; }
   .help-services .category-panel { min-height: 0; }
   .steps-process {
