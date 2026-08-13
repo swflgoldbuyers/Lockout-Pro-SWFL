@@ -96,11 +96,11 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
   background: #f7f9fc;
 }
 .section-why {
-  padding: clamp(1.55rem, 3vw, 2.15rem) 0;
+  padding: clamp(1.4rem, 2.6vw, 1.85rem) 0;
   /* Medium branded navy — lighter than darkest Service Areas (#040d1a) */
-  background: #13406e;
+  background: #154878;
   color: #fff;
-  border-top: 1px solid rgba(255, 122, 0, 0.28);
+  border-top: 1px solid rgba(255, 122, 0, 0.22);
 }
 .section-muted { background: var(--mist); }
 .section-dark { background: var(--navy-950); color: #fff; }
