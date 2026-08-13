@@ -593,22 +593,22 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
 /* Why — logo + story on dark navy */
 .why-simple {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 1.6rem clamp(1.6rem, 3vw, 2.6rem);
-  align-items: center;
+  gap: 1.45rem;
   width: 100%;
-  max-width: none;
-  margin-inline: 0;
+}
+.why-top {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1.5rem clamp(1.5rem, 3vw, 2.4rem);
+  align-items: center;
 }
 .why-brand {
   display: grid;
   place-items: center;
-  align-self: center;
-  width: clamp(128px, 16vw, 168px);
-  padding: 0.35rem;
+  width: clamp(132px, 16vw, 168px);
 }
 .why-logo {
-  width: clamp(120px, 15vw, 156px);
+  width: clamp(124px, 15vw, 160px);
   height: auto;
   aspect-ratio: 1;
   object-fit: contain;
@@ -625,8 +625,8 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
 }
 .why-story {
   color: rgba(255, 255, 255, 0.88);
-  margin: 0.7rem 0 1.25rem;
-  max-width: 68ch;
+  margin: 0.7rem 0 0;
+  max-width: 70ch;
   font-size: clamp(1.06rem, 1.55vw, 1.18rem);
   line-height: 1.62;
 }
@@ -637,28 +637,28 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
 }
 .check-list-why {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.65rem 0.9rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.65rem;
   margin-top: 0.15rem;
 }
 .check-list-why li {
   position: relative;
-  padding: 0.7rem 0.8rem 0.7rem 1.45rem;
+  padding: 0.85rem 0.85rem 0.85rem 1.4rem;
   color: rgba(255, 255, 255, 0.94);
   font-weight: 600;
-  font-size: 1.04rem;
+  font-size: 1.02rem;
   line-height: 1.35;
   background: rgba(255, 255, 255, 0.06);
-  border-left: 2px solid rgba(255, 122, 0, 0.8);
+  border-left: 2px solid rgba(255, 122, 0, 0.85);
 }
 .check-list-why li::before {
   content: "";
   position: absolute;
-  left: 0.6rem;
+  left: 0.55rem;
   top: 50%;
   transform: translateY(-50%);
-  width: 0.42rem;
-  height: 0.42rem;
+  width: 0.4rem;
+  height: 0.4rem;
   background: var(--orange);
 }
 
@@ -1343,26 +1343,21 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
     flex-wrap: wrap;
   }
   .steps-rail li { flex: 1 1 30%; min-width: 9rem; }
-  .why-simple {
+  .why-top {
     grid-template-columns: 1fr;
     justify-items: center;
     text-align: center;
-    gap: 1rem;
+    gap: 0.85rem;
   }
-  .why-brand {
-    width: auto;
+  .why-brand { width: auto; }
+  .why-logo { width: 96px; }
+  .why-story { margin-inline: auto; }
+  .check-list-inline { grid-template-columns: 1fr; }
+  .check-list-why {
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
   }
-  .why-logo {
-    width: 96px;
-  }
-  .why-story {
-    margin-inline: auto;
-  }
-  .check-list-inline,
-  .check-list-why { grid-template-columns: 1fr; width: 100%; }
-  .check-list-why li {
-    text-align: left;
-  }
+  .check-list-why li { text-align: left; }
   .local-band-map-bg { background-position: center 78%; }
   .hero-cta-row {
     flex-direction: column;
@@ -1383,9 +1378,14 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
   .local-band-map-bg { opacity: 0.18; }
 }
 
+@media (max-width: 980px) {
+  .check-list-why { grid-template-columns: 1fr 1fr; }
+}
+
 @media (max-width: 700px) {
   .help-services { grid-template-columns: 1fr; }
   .steps-rail { flex-direction: column; }
+  .check-list-why { grid-template-columns: 1fr; }
   .footer-grid,
   .area-chip-grid { grid-template-columns: 1fr; }
   .section { padding: 2.25rem 0; }
