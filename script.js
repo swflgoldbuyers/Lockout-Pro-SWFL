@@ -87,8 +87,10 @@
           <span class="review-stars" aria-hidden="true">★★★★★</span>
           ${source}
         </div>
-        <p class="review-text is-clamped">“${escapeHtml(r.text)}”</p>
-        <button type="button" class="review-toggle" hidden>Read more</button>
+        <div class="review-body">
+          <p class="review-text is-clamped">“${escapeHtml(r.text)}”</p>
+          <button type="button" class="review-toggle" hidden>Read more</button>
+        </div>
         <div class="review-meta">
           <strong class="review-name">${escapeHtml(r.name)}</strong>
           ${profile}
@@ -104,17 +106,31 @@
         const text = card.querySelector(".review-text");
         const toggle = card.querySelector(".review-toggle");
         if (!text || !toggle) return;
+        card.classList.remove("is-expanded");
         text.classList.add("is-clamped");
         const overflows = text.scrollHeight > text.clientHeight + 2;
         toggle.hidden = !overflows;
         toggle.textContent = "Read more";
         toggle.setAttribute("aria-expanded", "false");
         toggle.onclick = () => {
-          const expanded = text.classList.contains("is-clamped");
-          text.classList.toggle("is-clamped", !expanded);
-          toggle.textContent = expanded ? "Read less" : "Read more";
-          toggle.setAttribute("aria-expanded", String(expanded));
-          if (expanded) stopAuto();
+          const willExpand = text.classList.contains("is-clamped");
+          // Collapse any other open cards so the carousel stays uniform
+          track.querySelectorAll(".review-card.is-expanded").forEach((openCard) => {
+            if (openCard === card) return;
+            openCard.classList.remove("is-expanded");
+            const openText = openCard.querySelector(".review-text");
+            const openToggle = openCard.querySelector(".review-toggle");
+            openText?.classList.add("is-clamped");
+            if (openToggle) {
+              openToggle.textContent = "Read more";
+              openToggle.setAttribute("aria-expanded", "false");
+            }
+          });
+          text.classList.toggle("is-clamped", !willExpand);
+          card.classList.toggle("is-expanded", willExpand);
+          toggle.textContent = willExpand ? "Read less" : "Read more";
+          toggle.setAttribute("aria-expanded", String(willExpand));
+          if (willExpand) stopAuto();
           else startAuto();
         };
       });
